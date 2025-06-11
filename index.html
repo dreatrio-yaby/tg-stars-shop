@@ -47,14 +47,17 @@
       });
     }
 
-    // Заглушка покупки (нужен бэкенд → invoiceLink)
+    // Покупка через serverless хук
     async function buy(productId) {
       try {
-        // TODO: задеплойте serverless-хук, который вызывает Bot API createInvoiceLink
-        // const { invoiceLink } = await fetch(`/api/create_invoice?item=${productId}`).then(r => r.json());
-        // tg.openInvoice(invoiceLink);   // открывает drawer оплаты в Telegram
-
-        tg.showAlert(`Покупка «${productId}»: пока только демо 😉`);
+        const response = await fetch(`https://functions.yandexcloud.net/d4e8d2h199cdcsnfhai7?item=${productId}`);
+        const data = await response.json();
+        
+        if (data.invoiceLink) {
+          tg.openInvoice(data.invoiceLink);   // открывает drawer оплаты в Telegram
+        } else {
+          tg.showAlert('Ошибка создания счета: ' + (data.error || 'Неизвестная ошибка'));
+        }
       } catch (e) {
         tg.showAlert('Ошибка: ' + e.message);
       }
