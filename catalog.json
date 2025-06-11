@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "id": "spotify_india_12m",
+      "title": "Spotify India (12 месяцев)",
+      "description": "12-месячная подписка Spotify Premium (регион Индия)",
+      "price_stars": 1,
+      "currency": "XTR"
+    },
+    {
+      "id": "apple_try_50_500",
+      "title": "Apple Gift Card 50-500 TRY",
+      "description": "Подарочные карты Apple номиналом 50-500 лир",
+      "price_stars": 1,
+      "currency": "XTR"
+    }
+  ]
+}
