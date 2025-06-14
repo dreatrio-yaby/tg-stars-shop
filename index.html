@@ -215,8 +215,8 @@
     }
 
     .logo-container {
-      width: 100px;
-      height: 100px;
+      width: 110px;
+      height: 110px;
       border-radius: var(--radius);
       display: flex;
       align-items: center;
@@ -242,8 +242,8 @@
     }
 
     .logo-container svg {
-      width: 56px;
-      height: 56px;
+      width: 64px;
+      height: 64px;
       transition: transform 0.3s ease;
     }
 
@@ -256,14 +256,14 @@
       position: absolute;
       top: -2px;
       left: -2px;
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
       background: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: 16px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
       border: 2px solid white;
       z-index: 2;
@@ -398,20 +398,20 @@
       }
 
       .logo-container {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
         margin-bottom: 0.75rem;
       }
 
       .logo-container svg {
-        width: 48px;
-        height: 48px;
+        width: 54px;
+        height: 54px;
       }
 
       .country-flag-overlay {
-        width: 20px;
-        height: 20px;
-        font-size: 12px;
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
       }
 
       .denomination-overlay {
@@ -558,9 +558,12 @@
       </svg>`;
     }
 
-    // Функция для замены лир на TL
+    // Функция для замены лир на TL и добавления пробелов между цифрой и валютой
     function formatDenomination(denomination) {
-      return denomination.replace(/лир/g, 'TL').replace(/лира/g, 'TL');
+      return denomination
+        .replace(/лир/g, 'TL')
+        .replace(/лира/g, 'TL')
+        .replace(/(\d+)([A-Za-z]+)/g, '$1 $2'); // Добавляем пробел между цифрой и валютой
     }
 
     // Загрузка и отображение товаров
