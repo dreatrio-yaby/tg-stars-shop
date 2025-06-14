@@ -107,7 +107,8 @@
     /* Product Grid */
     .products-grid {
       display: grid;
-      gap: 1.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
     }
 
     /* Product Card */
@@ -119,35 +120,21 @@
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       border: 3px solid transparent;
       position: relative;
-    }
-
-    .product-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--gradient-fire);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem 1rem;
     }
 
     .product-card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-strong);
-      border-color: var(--primary-yellow);
-    }
-
-    .product-header {
-      padding: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      position: relative;
     }
 
     .logo-container {
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
       border-radius: var(--border-radius-small);
       display: flex;
       align-items: center;
@@ -156,56 +143,52 @@
       box-shadow: var(--shadow-light);
       position: relative;
       overflow: visible;
+      margin-bottom: 1rem;
     }
 
     .logo-container svg {
-      width: 36px;
-      height: 36px;
+      width: 48px;
+      height: 48px;
     }
 
     .country-flag {
       position: absolute;
       bottom: -5px;
       right: -5px;
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       border: 2px solid white;
       box-shadow: 0 2px 4px rgba(0,0,0,0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 12px;
+      font-size: 14px;
       background: white;
     }
 
-    .product-info {
-      flex: 1;
-    }
-
     .product-title {
-      font-size: 1.1rem;
-      font-weight: 700;
+      font-size: 1rem;
+      font-weight: 600;
       color: var(--primary-black);
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.5rem;
       line-height: 1.3;
     }
 
-    .product-subtitle {
-      font-size: 0.9rem;
-      color: var(--medium-gray);
-      font-weight: 500;
+    .product-price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--primary-red);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
     }
 
-    .product-body {
-      padding: 0 1.5rem 1.5rem;
-    }
-
-    .product-description {
-      font-size: 0.9rem;
-      color: var(--medium-gray);
-      line-height: 1.5;
-      margin-bottom: 1.5rem;
+    .product-price .star-icon {
+      width: 1em;
+      height: 1em;
     }
 
     .buy-button {
@@ -213,15 +196,11 @@
       background: var(--gradient-fire);
       border: none;
       border-radius: var(--border-radius-small);
-      padding: 1rem;
-      font-size: 1.1rem;
-      font-weight: 700;
+      padding: 0.8rem;
+      font-size: 0.9rem;
+      font-weight: 600;
       color: white;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
       transition: all 0.3s ease;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
       position: relative;
@@ -283,6 +262,12 @@
     }
 
     /* Responsive */
+    @media (max-width: 768px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 480px) {
       .hero h1 {
         font-size: 2.5rem;
@@ -292,12 +277,37 @@
         padding: 1rem;
       }
       
-      .product-header {
-        padding: 1rem;
+      .products-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
-      
-      .product-body {
-        padding: 0 1rem 1rem;
+
+      .product-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .logo-container {
+        width: 100px;
+        height: 100px;
+      }
+
+      .logo-container svg {
+        width: 60px;
+        height: 60px;
+      }
+
+      .country-flag {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+      }
+
+      .product-title {
+        font-size: 1.2rem;
+      }
+
+      .product-price {
+        font-size: 1.3rem;
       }
     }
   </style>
@@ -380,25 +390,20 @@
         const title = `${product.brand} ${product.denomination} ${product.country}`;
         
         card.innerHTML = `
-          <div class="product-header">
-            <div class="logo-container">
-              ${brandLogos[product.brand] || '<div style="width:36px;height:36px;background:#ddd;border-radius:6px;"></div>'}
-              <div class="country-flag">
-                ${countryFlags[product.country_code] || '🌍'}
-              </div>
-            </div>
-            <div class="product-info">
-              <div class="product-title">${title}</div>
-              <div class="product-subtitle">${product.product_type}</div>
+          <div class="logo-container">
+            ${brandLogos[product.brand] || '<div style="width:48px;height:48px;background:#ddd;border-radius:6px;"></div>'}
+            <div class="country-flag">
+              ${countryFlags[product.country_code] || '🌍'}
             </div>
           </div>
-          <div class="product-body">
-            <div class="product-description">${product.description}</div>
-            <button class="buy-button" onclick="buyProduct('${product.id}')">
-              Купить за ${product.price_stars}
-              ${starSVG()}
-            </button>
+          <div class="product-title">${title}</div>
+          <div class="product-price">
+            ${product.price_stars}
+            ${starSVG()}
           </div>
+          <button class="buy-button" onclick="buyProduct('${product.id}')">
+            Купить
+          </button>
         `;
         
         container.appendChild(card);
