@@ -47,16 +47,16 @@
       overflow-x: hidden;
     }
 
-    /* Hero Section */
-    .hero {
+    /* Menu Section */
+    .menu {
       background: #161616;
-      padding: 2rem 1rem 1.5rem;
+      padding: 1.5rem 1rem;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
 
-    .hero::before {
+    .menu::before {
       content: '';
       position: absolute;
       top: -50%;
@@ -72,28 +72,61 @@
       to { transform: rotate(360deg); }
     }
 
-    .hero-content {
+    .menu-content {
       position: relative;
       z-index: 2;
     }
 
-    .hero h1 {
-      font-family: 'Fredoka One', cursive;
-      font-size: 3rem;
-      color: white;
-      text-shadow: 3px 3px 0px var(--dark-red);
-      margin-bottom: 0.5rem;
-      letter-spacing: -1px;
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .menu-item {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--border-radius);
+      padding: 1rem 0.75rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    .menu-item:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .menu-item.active {
+      background: var(--primary-red);
+      border-color: var(--dark-red);
+    }
+
+    .menu-item-logo {
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 0.5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: var(--border-radius-small);
     }
 
-    .hero-logo {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
+    .menu-item-logo svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .menu-item-name {
+      color: white;
+      font-size: 0.875rem;
+      font-weight: 500;
     }
 
     /* Container */
@@ -264,12 +297,16 @@
       border-radius: var(--border-radius-small);
       padding: 0.75rem;
       font-size: 0.875rem;
-      font-weight: 500;
+      font-weight: 600;
       color: white;
       cursor: pointer;
       transition: all 0.2s ease;
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
     }
 
     .buy-button:hover {
@@ -320,13 +357,13 @@
       .products-grid {
         gap: 0.5rem;
       }
+
+      .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-      
       .container {
         padding: 0.75rem 0.5rem;
       }
@@ -360,33 +397,54 @@
         padding: 0.6rem;
         font-size: 0.8rem;
       }
+
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .menu-item {
+        padding: 0.75rem 0.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <div class="hero-content">
-      <img src="https://static.tildacdn.com/tild6661-3964-4534-b533-373761656432/2.svg" alt="PODPISKA.ORG" class="hero-logo" />
+  <div class="menu">
+    <div class="menu-content">
+      <div class="menu-grid" id="menu-grid">
+        <!-- Меню будет загружено динамически -->
+      </div>
     </div>
   </div>
 
   <div class="container">
     <div id="products-container">
-      <div class="loading">Загружаем категории товаров...</div>
+      <div class="loading">Загружаем хиты продаж...</div>
     </div>
   </div>
 
   <script>
     const tg = window.Telegram?.WebApp;
     const container = document.getElementById('products-container');
+    const menuGrid = document.getElementById('menu-grid');
 
     // Настройка Telegram WebApp
     tg?.ready?.();
     tg?.setHeaderColor?.('#f65e49');
     tg?.setBackgroundColor?.('#ffffff');
 
-    // Логотип podpiska.org
-    const podpiskaLogo = `<svg viewBox="0 0 1764 288" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M1473.2 3.9124C1503.98 5.79464 1533.56 6.05131 1562.61 10.0083C1582.88 12.8317 1596.27 27.6543 1598.97 48.5087C1600.91 65.4544 1601.39 82.5371 1600.38 99.5645C1599.57 116.483 1591.82 130.301 1573.69 138.257C1596.12 147.391 1600.49 165.593 1601.49 185.035C1602.39 201.013 1601.68 217.119 1602.13 233.097C1602.43 244.412 1603.5 255.726 1604.27 268.688C1591.72 267.362 1578.6 266.892 1565.92 264.004C1562.67 263.255 1559.5 255.021 1559.18 250.037C1558.2 233.353 1558.56 216.584 1558.39 199.837C1558.39 194.489 1558.39 189.142 1558.16 183.816C1557.09 165.507 1549.99 158.149 1531.87 156.695C1527.33 156.331 1522.74 156.695 1516.6 156.695V260.133C1503.02 258.999 1490.93 258.55 1479.19 256.561C1476.77 256.154 1473.73 249.994 1473.69 246.465C1473.22 203.002 1473.24 159.54 1473.18 116.098C1473.18 79.7154 1473.2 43.4823 1473.2 3.9124ZM1516.36 43.0972C1516.36 66.6253 1516.36 90.1533 1516.36 113.425C1516.4 114.431 1516.65 115.419 1517.09 116.324C1517.54 117.23 1518.16 118.034 1518.93 118.686C1531.96 126.985 1554.56 117.082 1556.92 101.746C1557.79 93.9859 1558.08 86.1716 1557.79 78.3679C1557.79 46.8831 1551.68 41.0011 1520.13 42.0064C1518.85 42.2993 1517.6 42.6635 1516.36 43.0972Z" fill="#f65e49"></path><path d="M323.191 254.079C322.977 249.095 322.678 245.523 322.678 242.122C322.892 166.961 323.277 91.8211 323.191 16.6812C323.191 7.52666 325.522 4.18996 335.105 4.42524C355.382 4.93858 375.744 3.61245 396 4.21135C417.111 4.83163 437.003 10.3072 446.863 31.2686C451.349 41.315 453.716 52.1788 453.814 63.1811C454.435 104.141 454.242 145.101 453.451 186.04C452.724 224.541 432.746 245.352 394.652 248.689C371.295 250.742 347.896 252.239 323.191 254.079ZM367.317 215.343C374.632 215.022 380.664 214.894 386.567 214.445C402.523 213.269 409.731 206.039 409.86 189.954C410.159 146.891 410.238 103.842 410.095 60.8069C410.095 45.6207 403.529 39.5889 388.471 39.2253C384.556 39.1184 380.599 39.6745 376.728 39.2253C368.45 38.2842 366.718 42.1342 366.739 49.7701C366.889 101.339 366.611 152.93 366.504 204.52C366.59 207.643 366.996 210.766 367.317 215.343Z" fill="#FFFFFF"></path></svg>`;
+    // Состояние приложения
+    let allCategories = [];
+    let currentFilter = null;
+
+    // Хиты продаж с их ID
+    const hitProducts = [
+      'spotify_india_12m', // Spotify Индия 12 мес
+      'apple_turkey_500tl', // Apple 500 TL
+      'playstation_poland_200pln', // Playstation 200 PLN
+      'roblox_russia_800robux', // Roblox 800 Robux
+      'netflix_turkey_500tl' // Netflix 500 TL
+    ];
 
     // Логотипы брендов
     const brandLogos = {
@@ -438,88 +496,216 @@
       </svg>`;
     }
 
+    // Функция для замены лир на TL
+    function formatDenomination(denomination) {
+      return denomination.replace(/лир/g, 'TL').replace(/лира/g, 'TL');
+    }
+
     // Загрузка и отображение товаров
     fetch('catalog.json')
       .then(response => response.json())
-      .then(data => renderCategories(data.categories))
+      .then(data => {
+        allCategories = data.categories;
+        renderMenu(allCategories);
+        renderHitProducts(allCategories);
+      })
       .catch(error => {
         container.innerHTML = '<div class="loading">Ошибка загрузки товаров</div>';
         console.error('Ошибка:', error);
       });
 
-    function renderCategories(categories) {
+    // Отображение меню
+    function renderMenu(categories) {
+      menuGrid.innerHTML = '';
+      
+      // Добавляем кнопку "Хиты"
+      const hitsItem = document.createElement('div');
+      hitsItem.className = 'menu-item active';
+      hitsItem.innerHTML = `
+        <div class="menu-item-logo">
+          <span style="font-size: 24px;">🔥</span>
+        </div>
+        <div class="menu-item-name">Хиты</div>
+      `;
+      hitsItem.addEventListener('click', () => showHits());
+      menuGrid.appendChild(hitsItem);
+      
+      // Добавляем кнопки сервисов
+      categories.forEach(category => {
+        const menuItem = document.createElement('div');
+        menuItem.className = 'menu-item';
+        menuItem.innerHTML = `
+          <div class="menu-item-logo">
+            ${brandLogos[category.name] || '<div style="width:24px;height:24px;background:#ddd;border-radius:4px;"></div>'}
+          </div>
+          <div class="menu-item-name">${category.name}</div>
+        `;
+        menuItem.addEventListener('click', () => showService(category.id));
+        menuGrid.appendChild(menuItem);
+      });
+    }
+
+    // Показать хиты продаж
+    function showHits() {
+      currentFilter = null;
+      updateMenuActiveState();
+      renderHitProducts(allCategories);
+    }
+
+    // Показать все товары сервиса
+    function showService(serviceId) {
+      currentFilter = serviceId;
+      updateMenuActiveState(serviceId);
+      const category = allCategories.find(cat => cat.id === serviceId);
+      if (category) {
+        renderServiceProducts(category);
+      }
+    }
+
+    // Обновить активное состояние меню
+    function updateMenuActiveState(activeServiceId = null) {
+      const menuItems = menuGrid.querySelectorAll('.menu-item');
+      menuItems.forEach((item, index) => {
+        if (index === 0 && !activeServiceId) {
+          // Первый элемент (Хиты) активен если activeServiceId = null
+          item.classList.add('active');
+        } else if (index > 0 && activeServiceId === allCategories[index - 1].id) {
+          // Соответствующий сервис активен
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+    }
+
+    // Отображение хитов продаж
+    function renderHitProducts(categories) {
       container.innerHTML = '';
       container.className = 'categories-container';
       
+      // Создаем секцию для хитов продаж
+      const hitsSection = document.createElement('div');
+      hitsSection.className = 'category-section';
+      
+      const hitsHeader = document.createElement('h2');
+      hitsHeader.className = 'category-title';
+      hitsHeader.textContent = '🔥 Хиты продаж';
+      hitsSection.appendChild(hitsHeader);
+      
+      // Сетка продуктов
+      const productsGrid = document.createElement('div');
+      productsGrid.className = 'products-grid';
+      
+      // Находим хиты продаж
+      const hitProductsData = [];
       categories.forEach(category => {
-        const categoryDiv = document.createElement('div');
-        categoryDiv.className = 'category-section';
-        
-        const categoryHeader = document.createElement('h2');
-        categoryHeader.className = 'category-title';
-        categoryHeader.textContent = category.name;
-        categoryDiv.appendChild(categoryHeader);
-        
-        // Группируем продукты по странам
-        const productsByCountry = {};
         category.products.forEach(product => {
-          if (!productsByCountry[product.country]) {
-            productsByCountry[product.country] = [];
+          if (hitProducts.includes(product.id)) {
+            hitProductsData.push(product);
           }
-          productsByCountry[product.country].push(product);
         });
-        
-        // Отображаем продукты, сгруппированные по странам
-        Object.keys(productsByCountry).forEach(country => {
-          const countryProducts = productsByCountry[country];
-          
-          // Создаем секцию для страны
-          const countrySection = document.createElement('div');
-          countrySection.className = 'country-section';
-          
-          // Заголовок страны
-          const countryHeader = document.createElement('div');
-          countryHeader.className = 'country-header';
-          countryHeader.innerHTML = `
-            <div class="country-flag-large">${countryFlags[countryProducts[0].country_code] || '🌍'}</div>
-            <div class="country-name">${countryNames[countryProducts[0].country_code] || country}</div>
-          `;
-          countrySection.appendChild(countryHeader);
-          
-          // Сетка продуктов для этой страны
-          const productsGrid = document.createElement('div');
-          productsGrid.className = 'products-grid';
-          
-          countryProducts.forEach(product => {
-            const card = document.createElement('div');
-            card.className = 'product-card';
-            
-            // Формируем название: "Номинал"
-            const title = product.denomination;
-            
-            card.innerHTML = `
-              <div class="logo-container">
-                ${brandLogos[product.brand] || '<div style="width:36px;height:36px;background:#ddd;border-radius:6px;"></div>'}
-              </div>
-              <div class="product-title">${title}</div>
-              <div class="product-price">
-                ${product.price_stars}
-                ${starSVG()}
-              </div>
-              <button class="buy-button" onclick="buyProduct('${product.id}')">
-                Купить
-              </button>
-            `;
-            
-            productsGrid.appendChild(card);
-          });
-          
-          countrySection.appendChild(productsGrid);
-          categoryDiv.appendChild(countrySection);
-        });
-        
-        container.appendChild(categoryDiv);
       });
+      
+      hitProductsData.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        
+        // Формируем название: "Номинал"
+        const title = formatDenomination(product.denomination);
+        
+        card.innerHTML = `
+          <div class="logo-container">
+            ${brandLogos[product.brand] || '<div style="width:36px;height:36px;background:#ddd;border-radius:6px;"></div>'}
+          </div>
+          <div class="product-title">${title}</div>
+          <div class="product-price">
+            ${product.price_stars}
+            ${starSVG()}
+          </div>
+          <button class="buy-button" onclick="buyProduct('${product.id}')">
+            ${product.price_stars} ${starSVG()}
+          </button>
+        `;
+        
+        productsGrid.appendChild(card);
+      });
+      
+      hitsSection.appendChild(productsGrid);
+      container.appendChild(hitsSection);
+    }
+
+    // Отображение товаров конкретного сервиса
+    function renderServiceProducts(category) {
+      container.innerHTML = '';
+      container.className = 'categories-container';
+      
+      const categoryDiv = document.createElement('div');
+      categoryDiv.className = 'category-section';
+      
+      const categoryHeader = document.createElement('h2');
+      categoryHeader.className = 'category-title';
+      categoryHeader.textContent = category.name;
+      categoryDiv.appendChild(categoryHeader);
+      
+      // Группируем продукты по странам
+      const productsByCountry = {};
+      category.products.forEach(product => {
+        if (!productsByCountry[product.country]) {
+          productsByCountry[product.country] = [];
+        }
+        productsByCountry[product.country].push(product);
+      });
+      
+      // Отображаем продукты, сгруппированные по странам
+      Object.keys(productsByCountry).forEach(country => {
+        const countryProducts = productsByCountry[country];
+        
+        // Создаем секцию для страны
+        const countrySection = document.createElement('div');
+        countrySection.className = 'country-section';
+        
+        // Заголовок страны
+        const countryHeader = document.createElement('div');
+        countryHeader.className = 'country-header';
+        countryHeader.innerHTML = `
+          <div class="country-flag-large">${countryFlags[countryProducts[0].country_code] || '🌍'}</div>
+          <div class="country-name">${countryNames[countryProducts[0].country_code] || country}</div>
+        `;
+        countrySection.appendChild(countryHeader);
+        
+        // Сетка продуктов для этой страны
+        const productsGrid = document.createElement('div');
+        productsGrid.className = 'products-grid';
+        
+        countryProducts.forEach(product => {
+          const card = document.createElement('div');
+          card.className = 'product-card';
+          
+          // Формируем название: "Номинал"
+          const title = formatDenomination(product.denomination);
+          
+          card.innerHTML = `
+            <div class="logo-container">
+              ${brandLogos[product.brand] || '<div style="width:36px;height:36px;background:#ddd;border-radius:6px;"></div>'}
+            </div>
+            <div class="product-title">${title}</div>
+            <div class="product-price">
+              ${product.price_stars}
+              ${starSVG()}
+            </div>
+            <button class="buy-button" onclick="buyProduct('${product.id}')">
+              ${product.price_stars} ${starSVG()}
+            </button>
+          `;
+          
+          productsGrid.appendChild(card);
+        });
+        
+        countrySection.appendChild(productsGrid);
+        categoryDiv.appendChild(countrySection);
+      });
+      
+      container.appendChild(categoryDiv);
     }
 
     // Функция покупки
