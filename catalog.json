@@ -1,70 +1,460 @@
 {
-  "products": [
+  "categories": [
     {
-      "id": "spotify_india_12m",
-      "brand": "Spotify",
-      "product_type": "Premium",
-      "country": "Индия",
-      "country_code": "IN",
-      "denomination": "12 месяцев",
-      "description": "12-месячная подписка Spotify Premium для региона Индия",
-      "price_stars": 150,
-      "currency": "XTR"
+      "id": "spotify",
+      "name": "Spotify",
+      "description": "Музыкальная подписка",
+      "products": [
+        {
+          "id": "spotify_india_12m",
+          "brand": "Spotify",
+          "product_type": "Premium",
+          "country": "Индия",
+          "country_code": "IN",
+          "denomination": "12 месяцев",
+          "description": "12-месячная подписка Spotify Premium для региона Индия",
+          "price_stars": 180,
+          "currency": "XTR"
+        },
+        {
+          "id": "spotify_indonesia_1m",
+          "brand": "Spotify",
+          "product_type": "Premium",
+          "country": "Индонезия",
+          "country_code": "ID",
+          "denomination": "1 месяц",
+          "description": "1-месячная подписка Spotify Premium для региона Индонезия",
+          "price_stars": 45,
+          "currency": "XTR"
+        },
+        {
+          "id": "spotify_indonesia_3m",
+          "brand": "Spotify",
+          "product_type": "Premium",
+          "country": "Индонезия",
+          "country_code": "ID",
+          "denomination": "3 месяца",
+          "description": "3-месячная подписка Spotify Premium для региона Индонезия",
+          "price_stars": 120,
+          "currency": "XTR"
+        },
+        {
+          "id": "spotify_indonesia_6m",
+          "brand": "Spotify",
+          "product_type": "Premium",
+          "country": "Индонезия",
+          "country_code": "ID",
+          "denomination": "6 месяцев",
+          "description": "6-месячная подписка Spotify Premium для региона Индонезия",
+          "price_stars": 220,
+          "currency": "XTR"
+        }
+      ]
     },
     {
-      "id": "apple_turkey_100tl",
-      "brand": "Apple",
-      "product_type": "Gift Card",
-      "country": "Турция",
-      "country_code": "TR",
-      "denomination": "100 TL",
-      "description": "Подарочная карта Apple номиналом 100 турецких лир",
-      "price_stars": 250,
-      "currency": "XTR"
+      "id": "apple",
+      "name": "Apple",
+      "description": "Подарочные карты Apple",
+      "products": [
+        {
+          "id": "apple_turkey_50tl",
+          "brand": "Apple",
+          "product_type": "Gift Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "50 лир",
+          "description": "Подарочная карта Apple номиналом 50 турецких лир",
+          "price_stars": 120,
+          "currency": "XTR"
+        },
+        {
+          "id": "apple_turkey_100tl",
+          "brand": "Apple",
+          "product_type": "Gift Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "100 лир",
+          "description": "Подарочная карта Apple номиналом 100 турецких лир",
+          "price_stars": 240,
+          "currency": "XTR"
+        },
+        {
+          "id": "apple_turkey_250tl",
+          "brand": "Apple",
+          "product_type": "Gift Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "250 лир",
+          "description": "Подарочная карта Apple номиналом 250 турецких лир",
+          "price_stars": 600,
+          "currency": "XTR"
+        },
+        {
+          "id": "apple_turkey_500tl",
+          "brand": "Apple",
+          "product_type": "Gift Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "500 лир",
+          "description": "Подарочная карта Apple номиналом 500 турецких лир",
+          "price_stars": 1200,
+          "currency": "XTR"
+        },
+        {
+          "id": "apple_turkey_1000tl",
+          "brand": "Apple",
+          "product_type": "Gift Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "1000 лир",
+          "description": "Подарочная карта Apple номиналом 1000 турецких лир",
+          "price_stars": 2400,
+          "currency": "XTR"
+        },
+        {
+          "id": "apple_russia_500rub",
+          "brand": "Apple",
+          "product_type": "Gift Card",
+          "country": "Россия",
+          "country_code": "RU",
+          "denomination": "500 руб",
+          "description": "Подарочная карта Apple номиналом 500 рублей",
+          "price_stars": 150,
+          "currency": "XTR"
+        },
+        {
+          "id": "apple_russia_1000rub",
+          "brand": "Apple",
+          "product_type": "Gift Card",
+          "country": "Россия",
+          "country_code": "RU",
+          "denomination": "1000 руб",
+          "description": "Подарочная карта Apple номиналом 1000 рублей",
+          "price_stars": 300,
+          "currency": "XTR"
+        },
+        {
+          "id": "apple_russia_2000rub",
+          "brand": "Apple",
+          "product_type": "Gift Card",
+          "country": "Россия",
+          "country_code": "RU",
+          "denomination": "2000 руб",
+          "description": "Подарочная карта Apple номиналом 2000 рублей",
+          "price_stars": 600,
+          "currency": "XTR"
+        },
+        {
+          "id": "apple_russia_3000rub",
+          "brand": "Apple",
+          "product_type": "Gift Card",
+          "country": "Россия",
+          "country_code": "RU",
+          "denomination": "3000 руб",
+          "description": "Подарочная карта Apple номиналом 3000 рублей",
+          "price_stars": 900,
+          "currency": "XTR"
+        }
+      ]
     },
     {
-      "id": "netflix_poland_50usd",
-      "brand": "Netflix",
-      "product_type": "Premium",
-      "country": "Польша",
-      "country_code": "PL",
-      "denomination": "50 USD",
-      "description": "Netflix Premium подписка на 50 долларов для Польши",
-      "price_stars": 400,
-      "currency": "XTR"
+      "id": "playstation",
+      "name": "PlayStation",
+      "description": "PlayStation Store карты",
+      "products": [
+        {
+          "id": "playstation_usa_10usd",
+          "brand": "PlayStation",
+          "product_type": "Store Card",
+          "country": "США",
+          "country_code": "US",
+          "denomination": "10 USD",
+          "description": "Карта пополнения PlayStation Store на 10 долларов США",
+          "price_stars": 280,
+          "currency": "XTR"
+        },
+        {
+          "id": "playstation_usa_25usd",
+          "brand": "PlayStation",
+          "product_type": "Store Card",
+          "country": "США",
+          "country_code": "US",
+          "denomination": "25 USD",
+          "description": "Карта пополнения PlayStation Store на 25 долларов США",
+          "price_stars": 700,
+          "currency": "XTR"
+        },
+        {
+          "id": "playstation_usa_50usd",
+          "brand": "PlayStation",
+          "product_type": "Store Card",
+          "country": "США",
+          "country_code": "US",
+          "denomination": "50 USD",
+          "description": "Карта пополнения PlayStation Store на 50 долларов США",
+          "price_stars": 1400,
+          "currency": "XTR"
+        },
+        {
+          "id": "playstation_usa_100usd",
+          "brand": "PlayStation",
+          "product_type": "Store Card",
+          "country": "США",
+          "country_code": "US",
+          "denomination": "100 USD",
+          "description": "Карта пополнения PlayStation Store на 100 долларов США",
+          "price_stars": 2800,
+          "currency": "XTR"
+        },
+        {
+          "id": "playstation_poland_50pln",
+          "brand": "PlayStation",
+          "product_type": "Store Card",
+          "country": "Польша",
+          "country_code": "PL",
+          "denomination": "50 PLN",
+          "description": "Карта пополнения PlayStation Store на 50 польских злотых",
+          "price_stars": 350,
+          "currency": "XTR"
+        },
+        {
+          "id": "playstation_poland_100pln",
+          "brand": "PlayStation",
+          "product_type": "Store Card",
+          "country": "Польша",
+          "country_code": "PL",
+          "denomination": "100 PLN",
+          "description": "Карта пополнения PlayStation Store на 100 польских злотых",
+          "price_stars": 700,
+          "currency": "XTR"
+        },
+        {
+          "id": "playstation_poland_200pln",
+          "brand": "PlayStation",
+          "product_type": "Store Card",
+          "country": "Польша",
+          "country_code": "PL",
+          "denomination": "200 PLN",
+          "description": "Карта пополнения PlayStation Store на 200 польских злотых",
+          "price_stars": 1400,
+          "currency": "XTR"
+        },
+        {
+          "id": "playstation_turkey_500tl",
+          "brand": "PlayStation",
+          "product_type": "Store Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "500 лир",
+          "description": "Карта пополнения PlayStation Store на 500 турецких лир",
+          "price_stars": 1200,
+          "currency": "XTR"
+        },
+        {
+          "id": "playstation_turkey_1000tl",
+          "brand": "PlayStation",
+          "product_type": "Store Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "1000 лир",
+          "description": "Карта пополнения PlayStation Store на 1000 турецких лир",
+          "price_stars": 2400,
+          "currency": "XTR"
+        },
+        {
+          "id": "playstation_turkey_2000tl",
+          "brand": "PlayStation",
+          "product_type": "Store Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "2000 лир",
+          "description": "Карта пополнения PlayStation Store на 2000 турецких лир",
+          "price_stars": 4800,
+          "currency": "XTR"
+        }
+      ]
     },
     {
-      "id": "playstation_russia_1000rub",
-      "brand": "PlayStation",
-      "product_type": "Store Card",
-      "country": "Россия",
-      "country_code": "RU",
-      "denomination": "1000 руб",
-      "description": "Карта пополнения PlayStation Store на 1000 рублей",
-      "price_stars": 300,
-      "currency": "XTR"
+      "id": "roblox",
+      "name": "Roblox",
+      "description": "Robux для игры Roblox",
+      "products": [
+        {
+          "id": "roblox_russia_100robux",
+          "brand": "Roblox",
+          "product_type": "Robux",
+          "country": "Россия и СНГ",
+          "country_code": "RU",
+          "denomination": "100 Robux",
+          "description": "100 Robux для региона Россия и СНГ",
+          "price_stars": 35,
+          "currency": "XTR"
+        },
+        {
+          "id": "roblox_russia_200robux",
+          "brand": "Roblox",
+          "product_type": "Robux",
+          "country": "Россия и СНГ",
+          "country_code": "RU",
+          "denomination": "200 Robux",
+          "description": "200 Robux для региона Россия и СНГ",
+          "price_stars": 70,
+          "currency": "XTR"
+        },
+        {
+          "id": "roblox_russia_400robux",
+          "brand": "Roblox",
+          "product_type": "Robux",
+          "country": "Россия и СНГ",
+          "country_code": "RU",
+          "denomination": "400 Robux",
+          "description": "400 Robux для региона Россия и СНГ",
+          "price_stars": 140,
+          "currency": "XTR"
+        },
+        {
+          "id": "roblox_russia_800robux",
+          "brand": "Roblox",
+          "product_type": "Robux",
+          "country": "Россия и СНГ",
+          "country_code": "RU",
+          "denomination": "800 Robux",
+          "description": "800 Robux для региона Россия и СНГ",
+          "price_stars": 280,
+          "currency": "XTR"
+        },
+        {
+          "id": "roblox_russia_2000robux",
+          "brand": "Roblox",
+          "product_type": "Robux",
+          "country": "Россия и СНГ",
+          "country_code": "RU",
+          "denomination": "2000 Robux",
+          "description": "2000 Robux для региона Россия и СНГ",
+          "price_stars": 700,
+          "currency": "XTR"
+        },
+        {
+          "id": "roblox_russia_4500robux",
+          "brand": "Roblox",
+          "product_type": "Robux",
+          "country": "Россия и СНГ",
+          "country_code": "RU",
+          "denomination": "4500 Robux",
+          "description": "4500 Robux для региона Россия и СНГ",
+          "price_stars": 1575,
+          "currency": "XTR"
+        }
+      ]
     },
     {
-      "id": "spotify_poland_6m",
-      "brand": "Spotify",
-      "product_type": "Premium",
-      "country": "Польша",
-      "country_code": "PL",
-      "denomination": "6 месяцев",
-      "description": "6-месячная подписка Spotify Premium для региона Польша",
-      "price_stars": 200,
-      "currency": "XTR"
+      "id": "netflix",
+      "name": "Netflix",
+      "description": "Подарочные карты Netflix",
+      "products": [
+        {
+          "id": "netflix_turkey_250tl",
+          "brand": "Netflix",
+          "product_type": "Gift Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "250 лир",
+          "description": "Подарочная карта Netflix номиналом 250 турецких лир",
+          "price_stars": 600,
+          "currency": "XTR"
+        },
+        {
+          "id": "netflix_turkey_500tl",
+          "brand": "Netflix",
+          "product_type": "Gift Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "500 лир",
+          "description": "Подарочная карта Netflix номиналом 500 турецких лир",
+          "price_stars": 1200,
+          "currency": "XTR"
+        },
+        {
+          "id": "netflix_turkey_1000tl",
+          "brand": "Netflix",
+          "product_type": "Gift Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "1000 лир",
+          "description": "Подарочная карта Netflix номиналом 1000 турецких лир",
+          "price_stars": 2400,
+          "currency": "XTR"
+        }
+      ]
     },
     {
-      "id": "apple_india_2000inr",
-      "brand": "Apple",
-      "product_type": "Gift Card",
-      "country": "Индия",
-      "country_code": "IN",
-      "denomination": "2000 INR",
-      "description": "Подарочная карта Apple номиналом 2000 индийских рупий",
-      "price_stars": 180,
-      "currency": "XTR"
+      "id": "nintendo",
+      "name": "Nintendo",
+      "description": "Nintendo eShop карты",
+      "products": [
+        {
+          "id": "nintendo_usa_10usd",
+          "brand": "Nintendo",
+          "product_type": "eShop Card",
+          "country": "США",
+          "country_code": "US",
+          "denomination": "10 USD",
+          "description": "Карта пополнения Nintendo eShop на 10 долларов США",
+          "price_stars": 280,
+          "currency": "XTR"
+        },
+        {
+          "id": "nintendo_usa_35usd",
+          "brand": "Nintendo",
+          "product_type": "eShop Card",
+          "country": "США",
+          "country_code": "US",
+          "denomination": "35 USD",
+          "description": "Карта пополнения Nintendo eShop на 35 долларов США",
+          "price_stars": 980,
+          "currency": "XTR"
+        }
+      ]
+    },
+    {
+      "id": "xbox",
+      "name": "Xbox",
+      "description": "Xbox подписки",
+      "products": [
+        {
+          "id": "xbox_india_ultimate_1m",
+          "brand": "Xbox",
+          "product_type": "Game Pass Ultimate",
+          "country": "Индия",
+          "country_code": "IN",
+          "denomination": "1 месяц",
+          "description": "Xbox Game Pass Ultimate на 1 месяц для региона Индия",
+          "price_stars": 180,
+          "currency": "XTR"
+        },
+        {
+          "id": "xbox_india_core_6m",
+          "brand": "Xbox",
+          "product_type": "Game Pass Core",
+          "country": "Индия",
+          "country_code": "IN",
+          "denomination": "6 месяцев",
+          "description": "Xbox Game Pass Core на 6 месяцев для региона Индия",
+          "price_stars": 450,
+          "currency": "XTR"
+        },
+        {
+          "id": "xbox_india_core_12m",
+          "brand": "Xbox",
+          "product_type": "Game Pass Core",
+          "country": "Индия",
+          "country_code": "IN",
+          "denomination": "12 месяцев",
+          "description": "Xbox Game Pass Core на 12 месяцев для региона Индия",
+          "price_stars": 900,
+          "currency": "XTR"
+        }
+      ]
     }
   ]
 }
