@@ -178,42 +178,7 @@
       text-align: center;
     }
 
-    /* Country Sections */
-    .country-section {
-      margin-bottom: 2rem;
-    }
 
-    .country-section:last-child {
-      margin-bottom: 0;
-    }
-
-    .country-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-      padding: 0.75rem 1rem;
-      background: var(--surface-variant);
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-    }
-
-    .country-flag-large {
-      font-size: 1.25rem;
-      width: 1.5rem;
-      height: 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .country-name {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
 
     /* Product Grid */
     .products-grid {
@@ -250,8 +215,8 @@
     }
 
     .logo-container {
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
       border-radius: var(--radius);
       display: flex;
       align-items: center;
@@ -277,8 +242,8 @@
     }
 
     .logo-container svg {
-      width: 32px;
-      height: 32px;
+      width: 44px;
+      height: 44px;
       transition: transform 0.3s ease;
     }
 
@@ -286,17 +251,44 @@
       transform: scale(1.1);
     }
 
-    .product-title {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--text-primary);
-      margin-bottom: 1rem;
-      line-height: 1.4;
-      min-height: 2.4em;
+    /* Флаг страны в углу логотипа */
+    .country-flag-overlay {
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: 24px;
+      height: 24px;
+      background: white;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 14px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      border: 2px solid white;
+      z-index: 2;
     }
+
+    /* Номинал в углу логотипа */
+    .denomination-overlay {
+      position: absolute;
+      bottom: -4px;
+      right: -4px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: var(--radius-small);
+      font-size: 0.75rem;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(36, 129, 204, 0.3);
+      white-space: nowrap;
+      max-width: 60px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      z-index: 2;
+    }
+
+
 
     .buy-button {
       width: 100%;
@@ -406,20 +398,29 @@
       }
 
       .logo-container {
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
         margin-bottom: 0.75rem;
       }
 
       .logo-container svg {
-        width: 28px;
-        height: 28px;
+        width: 38px;
+        height: 38px;
       }
 
-      .product-title {
-        font-size: 0.8rem;
-        margin-bottom: 0.75rem;
+      .country-flag-overlay {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
       }
+
+      .denomination-overlay {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.4rem;
+        max-width: 50px;
+      }
+
+
 
       .buy-button {
         padding: 0.75rem;
@@ -632,60 +633,35 @@
       categoryHeader.textContent = category.name;
       categoryDiv.appendChild(categoryHeader);
       
-      // Группируем продукты по странам
-      const productsByCountry = {};
+      // Создаем общую сетку для всех продуктов без группировки по странам
+      const productsGrid = document.createElement('div');
+      productsGrid.className = 'products-grid';
+      
       category.products.forEach(product => {
-        if (!productsByCountry[product.country]) {
-          productsByCountry[product.country] = [];
-        }
-        productsByCountry[product.country].push(product);
-      });
-      
-      // Отображаем продукты, сгруппированные по странам
-      Object.keys(productsByCountry).forEach(country => {
-        const countryProducts = productsByCountry[country];
+        const card = document.createElement('div');
+        card.className = 'product-card';
         
-        // Создаем секцию для страны
-        const countrySection = document.createElement('div');
-        countrySection.className = 'country-section';
+        // Формируем сокращенный номинал для оверлея
+        const shortDenomination = formatDenomination(product.denomination)
+          .replace(/\s+(месяц|мес\.?)/gi, 'м')
+          .replace(/\s+(год|лет)/gi, 'г')
+          .replace(/\s+/g, '');
         
-        // Заголовок страны
-        const countryHeader = document.createElement('div');
-        countryHeader.className = 'country-header';
-        countryHeader.innerHTML = `
-          <div class="country-flag-large">${countryFlags[countryProducts[0].country_code] || '🌍'}</div>
-          <div class="country-name">${countryNames[countryProducts[0].country_code] || country}</div>
+        card.innerHTML = `
+          <div class="logo-container">
+            ${brandLogos[product.brand] || '<div style="width:44px;height:44px;background:#ddd;border-radius:6px;"></div>'}
+            <div class="country-flag-overlay">${countryFlags[product.country_code] || '🌍'}</div>
+            <div class="denomination-overlay">${shortDenomination}</div>
+          </div>
+          <button class="buy-button" onclick="buyProduct('${product.id}')">
+            ${product.price_stars} ${starSVG()}
+          </button>
         `;
-        countrySection.appendChild(countryHeader);
         
-        // Сетка продуктов для этой страны
-        const productsGrid = document.createElement('div');
-        productsGrid.className = 'products-grid';
-        
-        countryProducts.forEach(product => {
-          const card = document.createElement('div');
-          card.className = 'product-card';
-          
-          // Формируем название: "Номинал"
-          const title = formatDenomination(product.denomination);
-          
-          card.innerHTML = `
-            <div class="logo-container">
-              ${brandLogos[product.brand] || '<div style="width:32px;height:32px;background:#ddd;border-radius:6px;"></div>'}
-            </div>
-            <div class="product-title">${title}</div>
-            <button class="buy-button" onclick="buyProduct('${product.id}')">
-              ${product.price_stars} ${starSVG()}
-            </button>
-          `;
-          
-          productsGrid.appendChild(card);
-        });
-        
-        countrySection.appendChild(productsGrid);
-        categoryDiv.appendChild(countrySection);
+        productsGrid.appendChild(card);
       });
       
+      categoryDiv.appendChild(productsGrid);
       container.appendChild(categoryDiv);
     }
 
