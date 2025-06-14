@@ -124,7 +124,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 1.5rem 1rem;
+      padding: 1.2rem 0.8rem;
     }
 
     .product-card:hover {
@@ -133,8 +133,8 @@
     }
 
     .logo-container {
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 70px;
       border-radius: var(--border-radius-small);
       display: flex;
       align-items: center;
@@ -143,12 +143,12 @@
       box-shadow: var(--shadow-light);
       position: relative;
       overflow: visible;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
     }
 
     .logo-container svg {
-      width: 48px;
-      height: 48px;
+      width: 42px;
+      height: 42px;
     }
 
     .country-flag {
@@ -168,18 +168,18 @@
     }
 
     .product-title {
-      font-size: 1rem;
+      font-size: 0.85rem;
       font-weight: 600;
       color: var(--primary-black);
       margin-bottom: 0.5rem;
-      line-height: 1.3;
+      line-height: 1.2;
     }
 
     .product-price {
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--primary-red);
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -196,8 +196,8 @@
       background: var(--gradient-fire);
       border: none;
       border-radius: var(--border-radius-small);
-      padding: 0.8rem;
-      font-size: 0.9rem;
+      padding: 0.6rem;
+      font-size: 0.8rem;
       font-weight: 600;
       color: white;
       cursor: pointer;
@@ -391,7 +391,7 @@
         
         card.innerHTML = `
           <div class="logo-container">
-            ${brandLogos[product.brand] || '<div style="width:48px;height:48px;background:#ddd;border-radius:6px;"></div>'}
+            ${brandLogos[product.brand] || '<div style="width:42px;height:42px;background:#ddd;border-radius:6px;"></div>'}
             <div class="country-flag">
               ${countryFlags[product.country_code] || '🌍'}
             </div>
