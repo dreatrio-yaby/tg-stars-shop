@@ -79,8 +79,8 @@
 
     .menu-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.75rem;
       max-width: 600px;
       margin: 0 auto;
     }
@@ -89,11 +89,13 @@
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: var(--border-radius);
-      padding: 1rem 0.75rem;
+      padding: 0.5rem 0.75rem;
       cursor: pointer;
       transition: all 0.3s ease;
-      text-align: center;
       backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .menu-item:hover {
@@ -108,19 +110,19 @@
     }
 
     .menu-item-logo {
-      width: 40px;
-      height: 40px;
-      margin: 0 auto 0.5rem;
+      width: 28px;
+      height: 28px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: rgba(255, 255, 255, 0.9);
       border-radius: var(--border-radius-small);
+      flex-shrink: 0;
     }
 
     .menu-item-logo svg {
-      width: 24px;
-      height: 24px;
+      width: 18px;
+      height: 18px;
     }
 
     .menu-item-name {
@@ -254,40 +256,12 @@
       font-size: 0.875rem;
       font-weight: 500;
       color: var(--telegram-text);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
       line-height: 1.3;
       min-height: 2.3em;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-
-    .product-price {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--telegram-text);
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.25rem;
-      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-shadow: none;
-      padding: 0.25rem 0.5rem;
-      border-radius: 6px;
-      background-color: rgba(255, 215, 0, 0.1);
-      background-image: none;
-      color: #B8860B;
-      -webkit-text-fill-color: #B8860B;
-    }
-
-    .product-price .star-icon {
-      width: 1.1em;
-      height: 1.1em;
-      filter: none;
     }
 
     .buy-button {
@@ -296,8 +270,8 @@
       border: none;
       border-radius: var(--border-radius-small);
       padding: 0.75rem;
-      font-size: 0.875rem;
-      font-weight: 600;
+      font-size: 1rem;
+      font-weight: 700;
       color: white;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -385,17 +359,12 @@
 
       .product-title {
         font-size: 0.8rem;
-        margin-bottom: 0.4rem;
-      }
-
-      .product-price {
-        font-size: 0.9rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.6rem;
       }
 
       .buy-button {
         padding: 0.6rem;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
       }
 
       .menu-grid {
@@ -507,7 +476,10 @@
       .then(data => {
         allCategories = data.categories;
         renderMenu(allCategories);
-        renderHitProducts(allCategories);
+        // По умолчанию показываем первый сервис
+        if (allCategories.length > 0) {
+          showService(allCategories[0].id);
+        }
       })
       .catch(error => {
         container.innerHTML = '<div class="loading">Ошибка загрузки товаров</div>';
@@ -518,38 +490,19 @@
     function renderMenu(categories) {
       menuGrid.innerHTML = '';
       
-      // Добавляем кнопку "Хиты"
-      const hitsItem = document.createElement('div');
-      hitsItem.className = 'menu-item active';
-      hitsItem.innerHTML = `
-        <div class="menu-item-logo">
-          <span style="font-size: 24px;">🔥</span>
-        </div>
-        <div class="menu-item-name">Хиты</div>
-      `;
-      hitsItem.addEventListener('click', () => showHits());
-      menuGrid.appendChild(hitsItem);
-      
       // Добавляем кнопки сервисов
-      categories.forEach(category => {
+      categories.forEach((category, index) => {
         const menuItem = document.createElement('div');
-        menuItem.className = 'menu-item';
+        menuItem.className = index === 0 ? 'menu-item active' : 'menu-item';
         menuItem.innerHTML = `
           <div class="menu-item-logo">
-            ${brandLogos[category.name] || '<div style="width:24px;height:24px;background:#ddd;border-radius:4px;"></div>'}
+            ${brandLogos[category.name] || '<div style="width:18px;height:18px;background:#ddd;border-radius:4px;"></div>'}
           </div>
           <div class="menu-item-name">${category.name}</div>
         `;
         menuItem.addEventListener('click', () => showService(category.id));
         menuGrid.appendChild(menuItem);
       });
-    }
-
-    // Показать хиты продаж
-    function showHits() {
-      currentFilter = null;
-      updateMenuActiveState();
-      renderHitProducts(allCategories);
     }
 
     // Показать все товары сервиса
@@ -563,14 +516,10 @@
     }
 
     // Обновить активное состояние меню
-    function updateMenuActiveState(activeServiceId = null) {
+    function updateMenuActiveState(activeServiceId) {
       const menuItems = menuGrid.querySelectorAll('.menu-item');
       menuItems.forEach((item, index) => {
-        if (index === 0 && !activeServiceId) {
-          // Первый элемент (Хиты) активен если activeServiceId = null
-          item.classList.add('active');
-        } else if (index > 0 && activeServiceId === allCategories[index - 1].id) {
-          // Соответствующий сервис активен
+        if (activeServiceId === allCategories[index].id) {
           item.classList.add('active');
         } else {
           item.classList.remove('active');
@@ -578,61 +527,7 @@
       });
     }
 
-    // Отображение хитов продаж
-    function renderHitProducts(categories) {
-      container.innerHTML = '';
-      container.className = 'categories-container';
-      
-      // Создаем секцию для хитов продаж
-      const hitsSection = document.createElement('div');
-      hitsSection.className = 'category-section';
-      
-      const hitsHeader = document.createElement('h2');
-      hitsHeader.className = 'category-title';
-      hitsHeader.textContent = '🔥 Хиты продаж';
-      hitsSection.appendChild(hitsHeader);
-      
-      // Сетка продуктов
-      const productsGrid = document.createElement('div');
-      productsGrid.className = 'products-grid';
-      
-      // Находим хиты продаж
-      const hitProductsData = [];
-      categories.forEach(category => {
-        category.products.forEach(product => {
-          if (hitProducts.includes(product.id)) {
-            hitProductsData.push(product);
-          }
-        });
-      });
-      
-      hitProductsData.forEach(product => {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        
-        // Формируем название: "Номинал"
-        const title = formatDenomination(product.denomination);
-        
-        card.innerHTML = `
-          <div class="logo-container">
-            ${brandLogos[product.brand] || '<div style="width:36px;height:36px;background:#ddd;border-radius:6px;"></div>'}
-          </div>
-          <div class="product-title">${title}</div>
-          <div class="product-price">
-            ${product.price_stars}
-            ${starSVG()}
-          </div>
-          <button class="buy-button" onclick="buyProduct('${product.id}')">
-            ${product.price_stars} ${starSVG()}
-          </button>
-        `;
-        
-        productsGrid.appendChild(card);
-      });
-      
-      hitsSection.appendChild(productsGrid);
-      container.appendChild(hitsSection);
-    }
+
 
     // Отображение товаров конкретного сервиса
     function renderServiceProducts(category) {
@@ -684,19 +579,15 @@
           // Формируем название: "Номинал"
           const title = formatDenomination(product.denomination);
           
-          card.innerHTML = `
-            <div class="logo-container">
-              ${brandLogos[product.brand] || '<div style="width:36px;height:36px;background:#ddd;border-radius:6px;"></div>'}
-            </div>
-            <div class="product-title">${title}</div>
-            <div class="product-price">
-              ${product.price_stars}
-              ${starSVG()}
-            </div>
-            <button class="buy-button" onclick="buyProduct('${product.id}')">
-              ${product.price_stars} ${starSVG()}
-            </button>
-          `;
+                     card.innerHTML = `
+             <div class="logo-container">
+               ${brandLogos[product.brand] || '<div style="width:36px;height:36px;background:#ddd;border-radius:6px;"></div>'}
+             </div>
+             <div class="product-title">${title}</div>
+             <button class="buy-button" onclick="buyProduct('${product.id}')">
+               ${product.price_stars} ${starSVG()}
+             </button>
+           `;
           
           productsGrid.appendChild(card);
         });
