@@ -215,8 +215,8 @@
     }
 
     .logo-container {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       border-radius: var(--radius);
       display: flex;
       align-items: center;
@@ -242,8 +242,8 @@
     }
 
     .logo-container svg {
-      width: 44px;
-      height: 44px;
+      width: 56px;
+      height: 56px;
       transition: transform 0.3s ease;
     }
 
@@ -276,13 +276,13 @@
       right: -4px;
       background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
       color: white;
-      padding: 0.25rem 0.5rem;
+      padding: 0.3rem 0.6rem;
       border-radius: var(--radius-small);
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-weight: 600;
       box-shadow: 0 2px 8px rgba(36, 129, 204, 0.3);
       white-space: nowrap;
-      max-width: 60px;
+      max-width: 80px;
       overflow: hidden;
       text-overflow: ellipsis;
       z-index: 2;
@@ -398,14 +398,14 @@
       }
 
       .logo-container {
-        width: 70px;
-        height: 70px;
+        width: 90px;
+        height: 90px;
         margin-bottom: 0.75rem;
       }
 
       .logo-container svg {
-        width: 38px;
-        height: 38px;
+        width: 48px;
+        height: 48px;
       }
 
       .country-flag-overlay {
@@ -415,9 +415,9 @@
       }
 
       .denomination-overlay {
-        font-size: 0.65rem;
-        padding: 0.2rem 0.4rem;
-        max-width: 50px;
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+        max-width: 65px;
       }
 
 
@@ -643,8 +643,8 @@
         
         // Формируем сокращенный номинал для оверлея
         const shortDenomination = formatDenomination(product.denomination)
-          .replace(/\s+(месяц|мес\.?)/gi, 'м')
-          .replace(/\s+(год|лет)/gi, 'г')
+          .replace(/\s+(month|months|мес\.?|месяц|месяца|месяцев)/gi, 'm')
+          .replace(/\s+(year|years|год|лет)/gi, 'y')
           .replace(/\s+/g, '');
         
         card.innerHTML = `

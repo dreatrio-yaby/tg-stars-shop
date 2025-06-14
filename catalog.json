@@ -11,7 +11,7 @@
           "product_type": "Premium",
           "country": "Индия",
           "country_code": "IN",
-          "denomination": "12 месяцев",
+          "denomination": "12 months",
           "description": "12-месячная подписка Spotify Premium для региона Индия",
           "price_stars": 180,
           "currency": "XTR"
@@ -22,7 +22,7 @@
           "product_type": "Premium",
           "country": "Индонезия",
           "country_code": "ID",
-          "denomination": "1 месяц",
+          "denomination": "1 month",
           "description": "1-месячная подписка Spotify Premium для региона Индонезия",
           "price_stars": 45,
           "currency": "XTR"
@@ -33,7 +33,7 @@
           "product_type": "Premium",
           "country": "Индонезия",
           "country_code": "ID",
-          "denomination": "3 месяца",
+          "denomination": "3 months",
           "description": "3-месячная подписка Spotify Premium для региона Индонезия",
           "price_stars": 120,
           "currency": "XTR"
@@ -44,7 +44,7 @@
           "product_type": "Premium",
           "country": "Индонезия",
           "country_code": "ID",
-          "denomination": "6 месяцев",
+          "denomination": "6 months",
           "description": "6-месячная подписка Spotify Premium для региона Индонезия",
           "price_stars": 220,
           "currency": "XTR"
@@ -427,7 +427,7 @@
           "product_type": "Game Pass Ultimate",
           "country": "Индия",
           "country_code": "IN",
-          "denomination": "1 месяц",
+          "denomination": "1 month",
           "description": "Xbox Game Pass Ultimate на 1 месяц для региона Индия",
           "price_stars": 180,
           "currency": "XTR"
@@ -438,7 +438,7 @@
           "product_type": "Game Pass Core",
           "country": "Индия",
           "country_code": "IN",
-          "denomination": "6 месяцев",
+          "denomination": "6 months",
           "description": "Xbox Game Pass Core на 6 месяцев для региона Индия",
           "price_stars": 450,
           "currency": "XTR"
@@ -449,7 +449,7 @@
           "product_type": "Game Pass Core",
           "country": "Индия",
           "country_code": "IN",
-          "denomination": "12 месяцев",
+          "denomination": "12 months",
           "description": "Xbox Game Pass Core на 12 месяцев для региона Индия",
           "price_stars": 900,
           "currency": "XTR"
