@@ -2,16 +2,68 @@
   "products": [
     {
       "id": "spotify_india_12m",
-      "title": "Spotify India (12 месяцев)",
-      "description": "12-месячная подписка Spotify Premium (регион Индия)",
-      "price_stars": 1,
+      "brand": "Spotify",
+      "product_type": "Premium",
+      "country": "Индия",
+      "country_code": "IN",
+      "denomination": "12 месяцев",
+      "description": "12-месячная подписка Spotify Premium для региона Индия",
+      "price_stars": 150,
       "currency": "XTR"
     },
     {
-      "id": "apple_try_50_500",
-      "title": "Apple Gift Card 50-500 TRY",
-      "description": "Подарочные карты Apple номиналом 50-500 лир",
-      "price_stars": 1,
+      "id": "apple_turkey_100tl",
+      "brand": "Apple",
+      "product_type": "Gift Card",
+      "country": "Турция",
+      "country_code": "TR",
+      "denomination": "100 TL",
+      "description": "Подарочная карта Apple номиналом 100 турецких лир",
+      "price_stars": 250,
+      "currency": "XTR"
+    },
+    {
+      "id": "netflix_poland_50usd",
+      "brand": "Netflix",
+      "product_type": "Premium",
+      "country": "Польша",
+      "country_code": "PL",
+      "denomination": "50 USD",
+      "description": "Netflix Premium подписка на 50 долларов для Польши",
+      "price_stars": 400,
+      "currency": "XTR"
+    },
+    {
+      "id": "playstation_russia_1000rub",
+      "brand": "PlayStation",
+      "product_type": "Store Card",
+      "country": "Россия",
+      "country_code": "RU",
+      "denomination": "1000 руб",
+      "description": "Карта пополнения PlayStation Store на 1000 рублей",
+      "price_stars": 300,
+      "currency": "XTR"
+    },
+    {
+      "id": "spotify_poland_6m",
+      "brand": "Spotify",
+      "product_type": "Premium",
+      "country": "Польша",
+      "country_code": "PL",
+      "denomination": "6 месяцев",
+      "description": "6-месячная подписка Spotify Premium для региона Польша",
+      "price_stars": 200,
+      "currency": "XTR"
+    },
+    {
+      "id": "apple_india_2000inr",
+      "brand": "Apple",
+      "product_type": "Gift Card",
+      "country": "Индия",
+      "country_code": "IN",
+      "denomination": "2000 INR",
+      "description": "Подарочная карта Apple номиналом 2000 индийских рупий",
+      "price_stars": 180,
       "currency": "XTR"
     }
   ]
