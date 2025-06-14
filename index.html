@@ -17,13 +17,20 @@
       --dark-red: #e54b36;
       --light-gray: #f8f9fa;
       --medium-gray: #6c757d;
-      --shadow-strong: 0 8px 32px rgba(246, 94, 73, 0.3);
-      --shadow-medium: 0 4px 16px rgba(246, 94, 73, 0.15);
-      --shadow-light: 0 2px 8px rgba(246, 94, 73, 0.1);
-      --border-radius: 20px;
+      --border-color: #e1e5e9;
+      --shadow-strong: 0 12px 40px rgba(0, 0, 0, 0.15);
+      --shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.1);
+      --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.06);
+      --border-radius: 16px;
       --border-radius-small: 12px;
       --gradient-fire: linear-gradient(135deg, #f65e49 0%, #e54b36 100%);
       --gradient-bg: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      --telegram-bg: #ffffff;
+      --telegram-secondary-bg: #f7f7f7;
+      --telegram-text: #000000;
+      --telegram-link: #168acd;
+      --telegram-button: #40a7e3;
+      --telegram-destructive: #e53935;
     }
 
     * {
@@ -34,8 +41,8 @@
 
     body {
       font-family: 'Inter', system-ui, sans-serif;
-      background: var(--gradient-bg);
-      color: var(--primary-black);
+      background: var(--telegram-bg);
+      color: var(--telegram-text);
       min-height: 100vh;
       overflow-x: hidden;
     }
@@ -43,7 +50,7 @@
     /* Hero Section */
     .hero {
       background: #161616;
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 1.5rem;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -87,192 +94,212 @@
       width: 100%;
       max-width: 400px;
       height: auto;
-      margin-bottom: 1rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.2rem;
-      color: var(--primary-white);
-      font-weight: 500;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     }
 
     /* Container */
     .container {
-      max-width: 450px;
+      max-width: 480px;
       margin: 0 auto;
-      padding: 2rem 1rem;
+      padding: 1.5rem 1rem;
     }
 
     /* Categories */
     .categories-container {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     .category-section {
-      background: rgba(255, 255, 255, 0.9);
+      background: var(--telegram-bg);
+      border: 1px solid var(--border-color);
       border-radius: var(--border-radius);
       padding: 1.5rem;
-      box-shadow: var(--shadow-medium);
+      box-shadow: var(--shadow-light);
     }
 
     .category-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary-red);
-      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--telegram-text);
+      text-align: left;
       margin-bottom: 1rem;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    /* Country Sections */
+    .country-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .country-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .country-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--telegram-secondary-bg);
+      border-radius: var(--border-radius-small);
+      border: 1px solid var(--border-color);
+    }
+
+    .country-flag-large {
+      font-size: 1.25rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .country-name {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--telegram-text);
     }
 
     /* Product Grid */
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.8rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
     }
 
     /* Product Card */
     .product-card {
-      background: white;
+      background: var(--telegram-bg);
+      border: 1px solid var(--border-color);
       border-radius: var(--border-radius);
-      box-shadow: var(--shadow-medium);
+      box-shadow: var(--shadow-light);
       overflow: hidden;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      border: 3px solid transparent;
+      transition: all 0.2s ease;
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 0.8rem 0.5rem;
+      padding: 1rem 0.75rem;
     }
 
     .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-strong);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-medium);
+      border-color: var(--telegram-link);
+    }
+
+    .product-card:active {
+      transform: translateY(0);
+      box-shadow: var(--shadow-light);
     }
 
     .logo-container {
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border-radius: var(--border-radius-small);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, var(--primary-white) 0%, var(--light-gray) 100%);
+      background: var(--telegram-secondary-bg);
+      border: 1px solid var(--border-color);
       box-shadow: var(--shadow-light);
       position: relative;
       overflow: visible;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .logo-container svg {
-      width: 30px;
-      height: 30px;
-    }
-
-    .country-flag {
-      position: absolute;
-      bottom: -3px;
-      right: -3px;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      border: 2px solid white;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      background: white;
+      width: 36px;
+      height: 36px;
     }
 
     .product-title {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--primary-black);
-      margin-bottom: 0.4rem;
-      line-height: 1.2;
-    }
-
-    .product-price {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--primary-red);
-      margin-bottom: 0.6rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--telegram-text);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+      min-height: 2.3em;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 0.3rem;
+    }
+
+    .product-price {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--telegram-text);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: none;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      background-color: rgba(255, 215, 0, 0.1);
+      background-image: none;
+      color: #B8860B;
+      -webkit-text-fill-color: #B8860B;
     }
 
     .product-price .star-icon {
-      width: 1em;
-      height: 1em;
+      width: 1.1em;
+      height: 1.1em;
+      filter: none;
     }
 
     .buy-button {
       width: 100%;
-      background: var(--gradient-fire);
+      background: var(--telegram-button);
       border: none;
       border-radius: var(--border-radius-small);
-      padding: 0.5rem;
-      font-size: 0.7rem;
-      font-weight: 600;
+      padding: 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 500;
       color: white;
       cursor: pointer;
-      transition: all 0.3s ease;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      transition: all 0.2s ease;
       position: relative;
       overflow: hidden;
     }
 
-    .buy-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      transition: left 0.5s;
-    }
-
-    .buy-button:hover::before {
-      left: 100%;
-    }
-
     .buy-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(214, 35, 0, 0.4);
+      background: #2b96d6;
+      transform: translateY(-1px);
     }
 
     .buy-button:active {
       transform: translateY(0);
+      background: #1e88c7;
     }
 
     .star-icon {
       width: 1.2em;
       height: 1.2em;
-      filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
     }
 
     /* Loading State */
     .loading {
       text-align: center;
       padding: 2rem;
-      color: var(--primary-black);
+      color: var(--telegram-text);
     }
 
     .loading::after {
       content: '';
       width: 30px;
       height: 30px;
-      border: 3px solid var(--light-gray);
-      border-top: 3px solid var(--primary-red);
+      border: 3px solid var(--border-color);
+      border-top: 3px solid var(--telegram-button);
       border-radius: 50%;
       display: inline-block;
       animation: spin 1s linear infinite;
@@ -286,9 +313,12 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      .container {
+        padding: 1rem 0.75rem;
+      }
+      
       .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.6rem;
+        gap: 0.5rem;
       }
     }
 
@@ -298,50 +328,37 @@
       }
       
       .container {
-        padding: 0.8rem;
+        padding: 0.75rem 0.5rem;
       }
       
-      .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
-      }
-
       .product-card {
-        padding: 0.6rem 0.4rem;
+        padding: 0.75rem 0.5rem;
       }
 
       .logo-container {
-        width: 40px;
-        height: 40px;
-        margin-bottom: 0.4rem;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0.5rem;
       }
 
       .logo-container svg {
-        width: 24px;
-        height: 24px;
-      }
-
-      .country-flag {
-        width: 14px;
-        height: 14px;
-        font-size: 8px;
-        bottom: -2px;
-        right: -2px;
+        width: 30px;
+        height: 30px;
       }
 
       .product-title {
-        font-size: 0.65rem;
-        margin-bottom: 0.3rem;
-      }
-
-      .product-price {
         font-size: 0.8rem;
         margin-bottom: 0.4rem;
       }
 
+      .product-price {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
       .buy-button {
-        padding: 0.4rem;
-        font-size: 0.6rem;
+        padding: 0.6rem;
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -350,7 +367,6 @@
   <div class="hero">
     <div class="hero-content">
       <img src="https://static.tildacdn.com/tild6661-3964-4534-b533-373761656432/2.svg" alt="PODPISKA.ORG" class="hero-logo" />
-      <p class="hero-subtitle">Цифровые товары премиум качества</p>
     </div>
   </div>
 
@@ -399,13 +415,23 @@
       'US': '🇺🇸'
     };
 
+    // Названия стран
+    const countryNames = {
+      'IN': 'Индия',
+      'TR': 'Турция',
+      'PL': 'Польша',
+      'RU': 'Россия',
+      'ID': 'Индонезия',
+      'US': 'США'
+    };
+
     // SVG иконка звезды
     function starSVG() {
       return `<svg class="star-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="star-gradient" x1="10" y1="1.5" x2="10" y2="18.5" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#FFD600"/>
-            <stop offset="1" stop-color="#FFB800"/>
+            <stop stop-color="#FFD700"/>
+            <stop offset="1" stop-color="#FFA500"/>
           </linearGradient>
         </defs>
         <path d="M7.26843 6.25162L9.28943 2.22541C9.52311 1.76121 10.0884 1.5749 10.5494 1.80857C10.7294 1.90015 10.8747 2.04857 10.9662 2.23172L12.8767 6.11583C13.0314 6.43477 13.3378 6.64951 13.6883 6.69056L17.6829 7.17055C18.2261 7.23686 18.6145 7.73264 18.5513 8.27894C18.5229 8.50314 18.4218 8.71156 18.2608 8.86945L15.0998 11.9862C14.9703 12.1125 14.9103 12.2894 14.9324 12.4694L15.4598 16.6756C15.5356 17.2787 15.1093 17.8282 14.5093 17.904C14.2819 17.9324 14.0546 17.8913 13.8525 17.7808L10.5147 15.9556C10.2715 15.823 9.98099 15.8198 9.73784 15.9461L6.27687 17.7208C5.79057 17.9703 5.1969 17.7745 4.94743 17.285C4.8527 17.1019 4.82112 16.8966 4.84954 16.6945L5.12427 14.7619C5.26006 13.8177 5.84425 12.9967 6.69055 12.5641L10.5305 10.6031C10.6315 10.5526 10.6726 10.4263 10.622 10.322C10.581 10.2431 10.4957 10.1957 10.4073 10.2084L5.70847 10.8841C4.99164 10.9852 4.26535 10.7831 3.7001 10.322L2.13698 9.04629C1.69173 8.68314 1.6191 8.02 1.98225 7.57159C2.15277 7.36317 2.39592 7.22739 2.66118 7.19265L6.6716 6.67793C6.92739 6.64319 7.15159 6.4853 7.26843 6.25162Z" fill="url(#star-gradient)"/>
@@ -434,9 +460,6 @@
         categoryHeader.textContent = category.name;
         categoryDiv.appendChild(categoryHeader);
         
-        const productsGrid = document.createElement('div');
-        productsGrid.className = 'products-grid';
-        
         // Группируем продукты по странам
         const productsByCountry = {};
         category.products.forEach(product => {
@@ -450,6 +473,23 @@
         Object.keys(productsByCountry).forEach(country => {
           const countryProducts = productsByCountry[country];
           
+          // Создаем секцию для страны
+          const countrySection = document.createElement('div');
+          countrySection.className = 'country-section';
+          
+          // Заголовок страны
+          const countryHeader = document.createElement('div');
+          countryHeader.className = 'country-header';
+          countryHeader.innerHTML = `
+            <div class="country-flag-large">${countryFlags[countryProducts[0].country_code] || '🌍'}</div>
+            <div class="country-name">${countryNames[countryProducts[0].country_code] || country}</div>
+          `;
+          countrySection.appendChild(countryHeader);
+          
+          // Сетка продуктов для этой страны
+          const productsGrid = document.createElement('div');
+          productsGrid.className = 'products-grid';
+          
           countryProducts.forEach(product => {
             const card = document.createElement('div');
             card.className = 'product-card';
@@ -459,10 +499,7 @@
             
             card.innerHTML = `
               <div class="logo-container">
-                ${brandLogos[product.brand] || '<div style="width:42px;height:42px;background:#ddd;border-radius:6px;"></div>'}
-                <div class="country-flag">
-                  ${countryFlags[product.country_code] || '🌍'}
-                </div>
+                ${brandLogos[product.brand] || '<div style="width:36px;height:36px;background:#ddd;border-radius:6px;"></div>'}
               </div>
               <div class="product-title">${title}</div>
               <div class="product-price">
@@ -476,9 +513,11 @@
             
             productsGrid.appendChild(card);
           });
+          
+          countrySection.appendChild(productsGrid);
+          categoryDiv.appendChild(countrySection);
         });
         
-        categoryDiv.appendChild(productsGrid);
         container.appendChild(categoryDiv);
       });
     }
