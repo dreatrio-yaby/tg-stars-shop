@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Telegram Web Apps SDK -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <title>⭐ Stars Shop</title>
+  <title>⭐ podpiska.org</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Inter:wght@400;500;600;700&display=swap');
     
     :root {
-      /* Burger King Colors */
-      --primary-red: #D62300;
-      --primary-yellow: #FFC72C;
-      --primary-orange: #FF8C00;
-      --dark-red: #B01E00;
-      --cream: #FFF8E1;
-      --dark-brown: #8B4513;
-      --shadow-strong: 0 8px 32px rgba(214, 35, 0, 0.3);
-      --shadow-medium: 0 4px 16px rgba(214, 35, 0, 0.15);
-      --shadow-light: 0 2px 8px rgba(214, 35, 0, 0.1);
+      /* podpiska.org Colors */
+      --primary-red: #f65e49;
+      --primary-white: #ffffff;
+      --primary-black: #161616;
+      --dark-red: #e54b36;
+      --light-gray: #f8f9fa;
+      --medium-gray: #6c757d;
+      --shadow-strong: 0 8px 32px rgba(246, 94, 73, 0.3);
+      --shadow-medium: 0 4px 16px rgba(246, 94, 73, 0.15);
+      --shadow-light: 0 2px 8px rgba(246, 94, 73, 0.1);
       --border-radius: 20px;
       --border-radius-small: 12px;
-      --gradient-fire: linear-gradient(135deg, #D62300 0%, #FF8C00 50%, #FFC72C 100%);
-      --gradient-bg: linear-gradient(135deg, #FFF8E1 0%, #FFE4B5 100%);
+      --gradient-fire: linear-gradient(135deg, #f65e49 0%, #e54b36 100%);
+      --gradient-bg: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     }
 
     * {
@@ -35,7 +35,7 @@
     body {
       font-family: 'Inter', system-ui, sans-serif;
       background: var(--gradient-bg);
-      color: #2D1B1B;
+      color: var(--primary-black);
       min-height: 100vh;
       overflow-x: hidden;
     }
@@ -77,11 +77,21 @@
       text-shadow: 3px 3px 0px var(--dark-red);
       margin-bottom: 0.5rem;
       letter-spacing: -1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .hero-logo {
+      width: 80px;
+      height: auto;
+      filter: drop-shadow(3px 3px 0px var(--dark-red));
     }
 
     .hero-subtitle {
       font-size: 1.2rem;
-      color: var(--cream);
+      color: var(--primary-white);
       font-weight: 500;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     }
@@ -135,21 +145,22 @@
     }
 
     .logo-container {
-      width: 60px;
+      width: 80px;
       height: 60px;
       border-radius: var(--border-radius-small);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background: linear-gradient(135deg, var(--primary-white) 0%, var(--light-gray) 100%);
       box-shadow: var(--shadow-light);
       position: relative;
       overflow: visible;
     }
 
     .logo-container svg {
-      width: 36px;
-      height: 36px;
+      width: 70px;
+      height: auto;
+      max-height: 50px;
     }
 
     .country-flag {
@@ -175,14 +186,14 @@
     .product-title {
       font-size: 1.1rem;
       font-weight: 700;
-      color: var(--dark-brown);
+      color: var(--primary-black);
       margin-bottom: 0.2rem;
       line-height: 1.3;
     }
 
     .product-subtitle {
       font-size: 0.9rem;
-      color: #666;
+      color: var(--medium-gray);
       font-weight: 500;
     }
 
@@ -192,7 +203,7 @@
 
     .product-description {
       font-size: 0.9rem;
-      color: #555;
+      color: var(--medium-gray);
       line-height: 1.5;
       margin-bottom: 1.5rem;
     }
@@ -251,14 +262,14 @@
     .loading {
       text-align: center;
       padding: 2rem;
-      color: var(--dark-brown);
+      color: var(--primary-black);
     }
 
     .loading::after {
       content: '';
       width: 30px;
       height: 30px;
-      border: 3px solid var(--primary-yellow);
+      border: 3px solid var(--light-gray);
       border-top: 3px solid var(--primary-red);
       border-radius: 50%;
       display: inline-block;
@@ -294,7 +305,13 @@
 <body>
   <div class="hero">
     <div class="hero-content">
-      <h1>⭐ STARS SHOP</h1>
+      <h1>
+        <svg class="hero-logo" viewBox="0 0 1764 288" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <path d="M1473.2 3.9124C1503.98 5.79464 1533.56 6.05131 1562.61 10.0083C1582.88 12.8317 1596.27 27.6543 1598.97 48.5087C1600.91 65.4544 1601.39 82.5371 1600.38 99.5645C1599.57 116.483 1591.82 130.301 1573.69 138.257C1596.12 147.391 1600.49 165.593 1601.49 185.035C1602.39 201.013 1601.68 217.119 1602.13 233.097C1602.43 244.412 1603.5 255.726 1604.27 268.688C1591.72 267.362 1578.6 266.892 1565.92 264.004C1562.67 263.255 1559.5 255.021 1559.18 250.037C1558.2 233.353 1558.56 216.584 1558.39 199.837C1558.39 194.489 1558.39 189.142 1558.16 183.816C1557.09 165.507 1549.99 158.149 1531.87 156.695C1527.33 156.331 1522.74 156.695 1516.6 156.695V260.133C1503.02 258.999 1490.93 258.55 1479.19 256.561C1476.77 256.154 1473.73 249.994 1473.69 246.465C1473.22 203.002 1473.24 159.54 1473.18 116.098C1473.18 79.7154 1473.2 43.4823 1473.2 3.9124ZM1516.36 43.0972C1516.36 66.6253 1516.36 90.1533 1516.36 113.425C1516.4 114.431 1516.65 115.419 1517.09 116.324C1517.54 117.23 1518.16 118.034 1518.93 118.686C1531.96 126.985 1554.56 117.082 1556.92 101.746C1557.79 93.9859 1558.08 86.1716 1557.79 78.3679C1557.79 46.8831 1551.68 41.0011 1520.13 42.0064C1518.85 42.2993 1517.6 42.6635 1516.36 43.0972Z" fill="white"/>
+          <path d="M323.191 254.079C322.977 249.095 322.678 245.523 322.678 242.122C322.892 166.961 323.277 91.8211 323.191 16.6812C323.191 7.52666 325.522 4.18996 335.105 4.42524C355.382 4.93858 375.744 3.61245 396 4.21135C417.111 4.83163 437.003 10.3072 446.863 31.2686C451.349 41.315 453.716 52.1788 453.814 63.1811C454.435 104.141 454.242 145.101 453.451 186.04C452.724 224.541 432.746 245.352 394.652 248.689C371.295 250.742 347.896 252.239 323.191 254.079ZM367.317 215.343C374.632 215.022 380.664 214.894 386.567 214.445C402.523 213.269 409.731 206.039 409.86 189.954C410.159 146.891 410.238 103.842 410.095 60.8069C410.095 45.6207 403.529 39.5889 388.471 39.2253C384.556 39.1184 380.599 39.6745 376.728 39.2253C368.45 38.2842 366.718 42.1342 366.739 49.7701C366.889 101.339 366.611 152.93 366.504 204.52C366.59 207.643 366.996 210.766 367.317 215.343Z" fill="white"/>
+        </svg>
+        PODPISKA.ORG
+      </h1>
       <p class="hero-subtitle">Цифровые товары премиум качества</p>
     </div>
   </div>
@@ -311,10 +328,13 @@
 
     // Настройка Telegram WebApp
     tg?.ready?.();
-    tg?.setHeaderColor?.('#D62300');
-    tg?.setBackgroundColor?.('#FFF8E1');
+    tg?.setHeaderColor?.('#f65e49');
+    tg?.setBackgroundColor?.('#ffffff');
 
-    // Логотипы брендов
+    // Логотип podpiska.org
+    const podpiskaLogo = `<svg viewBox="0 0 1764 288" xmlns="http://www.w3.org/2000/svg" fill="none"><path d="M1473.2 3.9124C1503.98 5.79464 1533.56 6.05131 1562.61 10.0083C1582.88 12.8317 1596.27 27.6543 1598.97 48.5087C1600.91 65.4544 1601.39 82.5371 1600.38 99.5645C1599.57 116.483 1591.82 130.301 1573.69 138.257C1596.12 147.391 1600.49 165.593 1601.49 185.035C1602.39 201.013 1601.68 217.119 1602.13 233.097C1602.43 244.412 1603.5 255.726 1604.27 268.688C1591.72 267.362 1578.6 266.892 1565.92 264.004C1562.67 263.255 1559.5 255.021 1559.18 250.037C1558.2 233.353 1558.56 216.584 1558.39 199.837C1558.39 194.489 1558.39 189.142 1558.16 183.816C1557.09 165.507 1549.99 158.149 1531.87 156.695C1527.33 156.331 1522.74 156.695 1516.6 156.695V260.133C1503.02 258.999 1490.93 258.55 1479.19 256.561C1476.77 256.154 1473.73 249.994 1473.69 246.465C1473.22 203.002 1473.24 159.54 1473.18 116.098C1473.18 79.7154 1473.2 43.4823 1473.2 3.9124ZM1516.36 43.0972C1516.36 66.6253 1516.36 90.1533 1516.36 113.425C1516.4 114.431 1516.65 115.419 1517.09 116.324C1517.54 117.23 1518.16 118.034 1518.93 118.686C1531.96 126.985 1554.56 117.082 1556.92 101.746C1557.79 93.9859 1558.08 86.1716 1557.79 78.3679C1557.79 46.8831 1551.68 41.0011 1520.13 42.0064C1518.85 42.2993 1517.6 42.6635 1516.36 43.0972Z" fill="#f65e49"></path><path d="M323.191 254.079C322.977 249.095 322.678 245.523 322.678 242.122C322.892 166.961 323.277 91.8211 323.191 16.6812C323.191 7.52666 325.522 4.18996 335.105 4.42524C355.382 4.93858 375.744 3.61245 396 4.21135C417.111 4.83163 437.003 10.3072 446.863 31.2686C451.349 41.315 453.716 52.1788 453.814 63.1811C454.435 104.141 454.242 145.101 453.451 186.04C452.724 224.541 432.746 245.352 394.652 248.689C371.295 250.742 347.896 252.239 323.191 254.079ZM367.317 215.343C374.632 215.022 380.664 214.894 386.567 214.445C402.523 213.269 409.731 206.039 409.86 189.954C410.159 146.891 410.238 103.842 410.095 60.8069C410.095 45.6207 403.529 39.5889 388.471 39.2253C384.556 39.1184 380.599 39.6745 376.728 39.2253C368.45 38.2842 366.718 42.1342 366.739 49.7701C366.889 101.339 366.611 152.93 366.504 204.52C366.59 207.643 366.996 210.766 367.317 215.343Z" fill="#FFFFFF"></path></svg>`;
+
+    // Логотипы брендов (оставляем для совместимости)
     const brandLogos = {
       'Spotify': `<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg"><path d="M128 0C57.308 0 0 57.309 0 128c0 70.696 57.309 128 128 128 70.697 0 128-57.304 128-128C256 57.314 198.697.007 127.998.007l.001-.006Zm58.699 184.614c-2.293 3.76-7.215 4.952-10.975 2.644-30.053-18.357-67.885-22.515-112.44-12.335a7.981 7.981 0 0 1-9.552-6.007 7.968 7.968 0 0 1 6-9.553c48.76-11.14 90.583-6.344 124.323 14.276 3.76 2.308 4.952 7.215 2.644 10.975Zm15.667-34.853c-2.89 4.695-9.034 6.178-13.726 3.289-34.406-21.148-86.853-27.273-127.548-14.92-5.278 1.594-10.852-1.38-12.454-6.649-1.59-5.278 1.386-10.842 6.655-12.446 46.485-14.106 104.275-7.273 143.787 17.007 4.692 2.89 6.175 9.034 3.286 13.72v-.001Zm1.345-36.293C162.457 88.964 94.394 86.71 55.007 98.666c-6.325 1.918-13.014-1.653-14.93-7.978-1.917-6.328 1.65-13.012 7.98-14.935C93.27 62.027 168.434 64.68 215.929 92.876c5.702 3.376 7.566 10.724 4.188 16.405-3.362 5.69-10.73 7.565-16.4 4.187h-.006Z" fill="#1ED760"/></svg>`,
       
@@ -368,7 +388,7 @@
         card.innerHTML = `
           <div class="product-header">
             <div class="logo-container">
-              ${brandLogos[product.brand] || '<div style="width:36px;height:36px;background:#ddd;border-radius:6px;"></div>'}
+              ${podpiskaLogo}
               <div class="country-flag">
                 ${countryFlags[product.country_code] || '🌍'}
               </div>
