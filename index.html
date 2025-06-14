@@ -145,7 +145,7 @@
     }
 
     .logo-container {
-      width: 80px;
+      width: 60px;
       height: 60px;
       border-radius: var(--border-radius-small);
       display: flex;
@@ -158,9 +158,8 @@
     }
 
     .logo-container svg {
-      width: 70px;
-      height: auto;
-      max-height: 50px;
+      width: 36px;
+      height: 36px;
     }
 
     .country-flag {
@@ -388,7 +387,7 @@
         card.innerHTML = `
           <div class="product-header">
             <div class="logo-container">
-              ${podpiskaLogo}
+              ${brandLogos[product.brand] || '<div style="width:36px;height:36px;background:#ddd;border-radius:6px;"></div>'}
               <div class="country-flag">
                 ${countryFlags[product.country_code] || '🌍'}
               </div>
