@@ -88,8 +88,8 @@
     }
 
     .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-wrap: wrap;
       gap: 0.5rem;
       padding: 0.25rem 0;
     }
@@ -98,7 +98,7 @@
       background: var(--surface-variant);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 0.75rem 0.5rem;
+      padding: 0.75rem 1rem;
       cursor: pointer;
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       display: flex;
@@ -106,6 +106,8 @@
       gap: 0.5rem;
       justify-content: center;
       text-align: center;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
 
     .menu-item:hover {
@@ -377,7 +379,6 @@
       }
 
       .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
         gap: 0.75rem;
       }
     }
@@ -426,7 +427,7 @@
       }
 
       .menu-item {
-        padding: 0.625rem 0.25rem;
+        padding: 0.625rem 0.75rem;
       }
 
       .menu-item-name {
