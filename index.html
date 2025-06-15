@@ -946,7 +946,7 @@
       modalTitle.textContent = `${product.brand} ${product.product_type}`;
       modalCountry.textContent = countryNames[product.country_code] || product.country;
       modalDenomination.textContent = product.denomination;
-      modalDescription.innerHTML = product.description || 'Описание товара недоступно';
+      modalDescription.innerHTML = (product.description || 'Описание товара недоступно').replace(/\n/g, '<br>');
       modalPrice.textContent = product.price_stars;
 
       // Настраиваем кнопку покупки
