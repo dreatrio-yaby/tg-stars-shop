@@ -203,6 +203,7 @@
       text-align: center;
       padding: 1.5rem 1rem;
       box-shadow: 0 1px 3px var(--shadow);
+      cursor: pointer;
     }
 
     .product-card:hover {
@@ -364,6 +365,181 @@
       100% { transform: rotate(360deg); }
     }
 
+    /* Modal Styles - Telegram стиль */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 1rem;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: var(--surface);
+      border-radius: var(--radius-large);
+      max-width: 400px;
+      width: 100%;
+      max-height: 80vh;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+      transform: translateY(20px) scale(0.9);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .modal-overlay.active .modal-content {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      padding: 1.5rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .modal-logo {
+      width: 56px;
+      height: 56px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .modal-logo svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .modal-product-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .modal-product-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: white;
+    }
+
+    .modal-product-subtitle {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      color: white;
+      font-size: 1.25rem;
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .modal-body {
+      padding: 1.5rem;
+      overflow-y: auto;
+      max-height: calc(80vh - 140px);
+    }
+
+    .modal-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .modal-price {
+      background: var(--surface-variant);
+      border-radius: var(--radius);
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-price-label {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .modal-price-value {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .modal-buy-button {
+      width: 100%;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      border: none;
+      border-radius: var(--radius);
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 2px 8px rgba(36, 129, 204, 0.2);
+    }
+
+    .modal-buy-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(36, 129, 204, 0.3);
+    }
+
+    .modal-buy-button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(36, 129, 204, 0.2);
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .container {
@@ -380,6 +556,23 @@
 
       .menu-grid {
         gap: 0.75rem;
+      }
+
+      .modal-overlay {
+        padding: 0.5rem;
+      }
+
+      .modal-content {
+        max-height: 90vh;
+      }
+
+      .modal-header {
+        padding: 1.25rem;
+      }
+
+      .modal-body {
+        padding: 1.25rem;
+        max-height: calc(90vh - 120px);
       }
     }
 
@@ -464,6 +657,58 @@
   <div class="container">
     <div id="products-container">
       <div class="loading">Загружаем товары...</div>
+    </div>
+  </div>
+
+  <!-- Modal для описания товара -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-logo" id="modalLogo">
+          <!-- Логотип будет добавлен динамически -->
+        </div>
+        <div class="modal-product-info">
+          <div class="modal-product-title" id="modalTitle">Название товара</div>
+          <div class="modal-product-subtitle" id="modalSubtitle">
+            <span id="modalCountry">Страна</span>
+            <span>•</span>
+            <span id="modalDenomination">Номинал</span>
+          </div>
+        </div>
+        <button class="modal-close" id="modalClose">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-description" id="modalDescription">
+          Описание товара
+        </div>
+        <div class="modal-price">
+          <div class="modal-price-label">Цена</div>
+          <div class="modal-price-value">
+            <span id="modalPrice">0</span>
+            <svg class="star-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="modal-star-gradient" x1="10" y1="1.5" x2="10" y2="18.5" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FFD700"/>
+                  <stop offset="1" stop-color="#FFA500"/>
+                </linearGradient>
+              </defs>
+              <path d="M7.26843 6.25162L9.28943 2.22541C9.52311 1.76121 10.0884 1.5749 10.5494 1.80857C10.7294 1.90015 10.8747 2.04857 10.9662 2.23172L12.8767 6.11583C13.0314 6.43477 13.3378 6.64951 13.6883 6.69056L17.6829 7.17055C18.2261 7.23686 18.6145 7.73264 18.5513 8.27894C18.5229 8.50314 18.4218 8.71156 18.2608 8.86945L15.0998 11.9862C14.9703 12.1125 14.9103 12.2894 14.9324 12.4694L15.4598 16.6756C15.5356 17.2787 15.1093 17.8282 14.5093 17.904C14.2819 17.9324 14.0546 17.8913 13.8525 17.7808L10.5147 15.9556C10.2715 15.823 9.98099 15.8198 9.73784 15.9461L6.27687 17.7208C5.79057 17.9703 5.1969 17.7745 4.94743 17.285C4.8527 17.1019 4.82112 16.8966 4.84954 16.6945L5.12427 14.7619C5.26006 13.8177 5.84425 12.9967 6.69055 12.5641L10.5305 10.6031C10.6315 10.5526 10.6726 10.4263 10.622 10.322C10.581 10.2431 10.4957 10.1957 10.4073 10.2084L5.70847 10.8841C4.99164 10.9852 4.26535 10.7831 3.7001 10.322L2.13698 9.04629C1.69173 8.68314 1.6191 8.02 1.98225 7.57159C2.15277 7.36317 2.39592 7.22739 2.66118 7.19265L6.6716 6.67793C6.92739 6.64319 7.15159 6.4853 7.26843 6.25162Z" fill="url(#modal-star-gradient)"/>
+            </svg>
+          </div>
+        </div>
+        <button class="modal-buy-button" id="modalBuyButton">
+          Купить
+          <svg class="star-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="modal-buy-star-gradient" x1="10" y1="1.5" x2="10" y2="18.5" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFD700"/>
+                <stop offset="1" stop-color="#FFA500"/>
+              </linearGradient>
+            </defs>
+            <path d="M7.26843 6.25162L9.28943 2.22541C9.52311 1.76121 10.0884 1.5749 10.5494 1.80857C10.7294 1.90015 10.8747 2.04857 10.9662 2.23172L12.8767 6.11583C13.0314 6.43477 13.3378 6.64951 13.6883 6.69056L17.6829 7.17055C18.2261 7.23686 18.6145 7.73264 18.5513 8.27894C18.5229 8.50314 18.4218 8.71156 18.2608 8.86945L15.0998 11.9862C14.9703 12.1125 14.9103 12.2894 14.9324 12.4694L15.4598 16.6756C15.5356 17.2787 15.1093 17.8282 14.5093 17.904C14.2819 17.9324 14.0546 17.8913 13.8525 17.7808L10.5147 15.9556C10.2715 15.823 9.98099 15.8198 9.73784 15.9461L6.27687 17.7208C5.79057 17.9703 5.1969 17.7745 4.94743 17.285C4.8527 17.1019 4.82112 16.8966 4.84954 16.6945L5.12427 14.7619C5.26006 13.8177 5.84425 12.9967 6.69055 12.5641L10.5305 10.6031C10.6315 10.5526 10.6726 10.4263 10.622 10.322C10.581 10.2431 10.4957 10.1957 10.4073 10.2084L5.70847 10.8841C4.99164 10.9852 4.26535 10.7831 3.7001 10.322L2.13698 9.04629C1.69173 8.68314 1.6191 8.02 1.98225 7.57159C2.15277 7.36317 2.39592 7.22739 2.66118 7.19265L6.6716 6.67793C6.92739 6.64319 7.15159 6.4853 7.26843 6.25162Z" fill="url(#modal-buy-star-gradient)"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -654,6 +899,14 @@
           </button>
         `;
         
+        // Добавляем обработчик клика на карточку (исключая кнопку)
+        card.addEventListener('click', (e) => {
+          // Проверяем, что клик не был по кнопке покупки
+          if (!e.target.closest('.buy-button')) {
+            openProductModal(product);
+          }
+        });
+        
         productsGrid.appendChild(card);
       });
       
@@ -676,6 +929,70 @@
         tg.showAlert('Ошибка: ' + error.message);
       }
     }
+
+    // Функции для работы с модальным окном
+    function openProductModal(product) {
+      const modal = document.getElementById('productModal');
+      const modalLogo = document.getElementById('modalLogo');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalCountry = document.getElementById('modalCountry');
+      const modalDenomination = document.getElementById('modalDenomination');
+      const modalDescription = document.getElementById('modalDescription');
+      const modalPrice = document.getElementById('modalPrice');
+      const modalBuyButton = document.getElementById('modalBuyButton');
+
+      // Заполняем данные модального окна
+      modalLogo.innerHTML = brandLogos[product.brand] || '<div style="width:32px;height:32px;background:#ddd;border-radius:6px;"></div>';
+      modalTitle.textContent = `${product.brand} ${product.product_type}`;
+      modalCountry.textContent = countryNames[product.country_code] || product.country;
+      modalDenomination.textContent = product.denomination;
+      modalDescription.textContent = product.description || 'Описание товара недоступно';
+      modalPrice.textContent = product.price_stars;
+
+      // Настраиваем кнопку покупки
+      modalBuyButton.onclick = () => {
+        closeProductModal();
+        buyProduct(product.id);
+      };
+
+      // Показываем модальное окно
+      modal.classList.add('active');
+      
+      // Блокируем скролл страницы
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProductModal() {
+      const modal = document.getElementById('productModal');
+      modal.classList.remove('active');
+      
+      // Восстанавливаем скролл страницы
+      document.body.style.overflow = '';
+    }
+
+    // Обработчики для закрытия модального окна
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('productModal');
+      const modalClose = document.getElementById('modalClose');
+      const modalOverlay = document.getElementById('productModal');
+
+      // Закрытие по клику на крестик
+      modalClose.addEventListener('click', closeProductModal);
+
+      // Закрытие по клику на фон
+      modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+          closeProductModal();
+        }
+      });
+
+      // Закрытие по клавише Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeProductModal();
+        }
+      });
+    });
   </script>
 </body>
 </html>
