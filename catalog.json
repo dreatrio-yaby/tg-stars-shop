@@ -427,7 +427,7 @@
           "product_type": "Game Pass Ultimate",
           "country": "Индия",
           "country_code": "IN",
-          "denomination": "1 мес",
+          "denomination": "Ultimate 1 мес",
           "description": "Xbox Game Pass Ultimate на 1 месяц для региона Индия",
           "price_stars": 180,
           "currency": "XTR"
@@ -438,7 +438,7 @@
           "product_type": "Game Pass Core",
           "country": "Индия",
           "country_code": "IN",
-          "denomination": "6 мес",
+          "denomination": "Core 6 мес",
           "description": "Xbox Game Pass Core на 6 месяцев для региона Индия",
           "price_stars": 450,
           "currency": "XTR"
@@ -449,7 +449,7 @@
           "product_type": "Game Pass Core",
           "country": "Индия",
           "country_code": "IN",
-          "denomination": "12 мес",
+          "denomination": "Core 12 мес",
           "description": "Xbox Game Pass Core на 12 месяцев для региона Индия",
           "price_stars": 900,
           "currency": "XTR"
