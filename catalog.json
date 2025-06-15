@@ -62,8 +62,8 @@
           "product_type": "Gift Card",
           "country": "Турция",
           "country_code": "TR",
-          "denomination": "50 лир",
-          "description": "Подарочная карта Apple номиналом 50 турецких лир",
+          "denomination": "50 TL",
+          "description": "Подарочная карта Apple номиналом 50 турецких TL",
           "price_stars": 120,
           "currency": "XTR"
         },
@@ -73,8 +73,8 @@
           "product_type": "Gift Card",
           "country": "Турция",
           "country_code": "TR",
-          "denomination": "100 лир",
-          "description": "Подарочная карта Apple номиналом 100 турецких лир",
+          "denomination": "100 TL",
+          "description": "Подарочная карта Apple номиналом 100 турецких TL",
           "price_stars": 240,
           "currency": "XTR"
         },
@@ -84,8 +84,8 @@
           "product_type": "Gift Card",
           "country": "Турция",
           "country_code": "TR",
-          "denomination": "250 лир",
-          "description": "Подарочная карта Apple номиналом 250 турецких лир",
+          "denomination": "250 TL",
+          "description": "Подарочная карта Apple номиналом 250 турецких TL",
           "price_stars": 600,
           "currency": "XTR"
         },
@@ -95,8 +95,8 @@
           "product_type": "Gift Card",
           "country": "Турция",
           "country_code": "TR",
-          "denomination": "500 лир",
-          "description": "Подарочная карта Apple номиналом 500 турецких лир",
+          "denomination": "500 TL",
+          "description": "Подарочная карта Apple номиналом 500 турецких TL",
           "price_stars": 1200,
           "currency": "XTR"
         },
@@ -106,8 +106,8 @@
           "product_type": "Gift Card",
           "country": "Турция",
           "country_code": "TR",
-          "denomination": "1000 лир",
-          "description": "Подарочная карта Apple номиналом 1000 турецких лир",
+          "denomination": "1000 TL",
+          "description": "Подарочная карта Apple номиналом 1000 турецких TL",
           "price_stars": 2400,
           "currency": "XTR"
         },
@@ -245,8 +245,8 @@
           "product_type": "Store Card",
           "country": "Турция",
           "country_code": "TR",
-          "denomination": "500 лир",
-          "description": "Карта пополнения PlayStation Store на 500 турецких лир",
+          "denomination": "500 TL",
+          "description": "Карта пополнения PlayStation Store на 500 турецких TL",
           "price_stars": 1200,
           "currency": "XTR"
         },
@@ -256,8 +256,8 @@
           "product_type": "Store Card",
           "country": "Турция",
           "country_code": "TR",
-          "denomination": "1000 лир",
-          "description": "Карта пополнения PlayStation Store на 1000 турецких лир",
+          "denomination": "1000 TL",
+          "description": "Карта пополнения PlayStation Store на 1000 турецких TL",
           "price_stars": 2400,
           "currency": "XTR"
         },
@@ -267,8 +267,8 @@
           "product_type": "Store Card",
           "country": "Турция",
           "country_code": "TR",
-          "denomination": "2000 лир",
-          "description": "Карта пополнения PlayStation Store на 2000 турецких лир",
+          "denomination": "2000 TL",
+          "description": "Карта пополнения PlayStation Store на 2000 турецких TL",
           "price_stars": 4800,
           "currency": "XTR"
         }
@@ -358,8 +358,8 @@
           "product_type": "Gift Card",
           "country": "Турция",
           "country_code": "TR",
-          "denomination": "250 лир",
-          "description": "Подарочная карта Netflix номиналом 250 турецких лир",
+          "denomination": "250 TL",
+          "description": "Подарочная карта Netflix номиналом 250 турецких TL",
           "price_stars": 600,
           "currency": "XTR"
         },
@@ -369,8 +369,8 @@
           "product_type": "Gift Card",
           "country": "Турция",
           "country_code": "TR",
-          "denomination": "500 лир",
-          "description": "Подарочная карта Netflix номиналом 500 турецких лир",
+          "denomination": "500 TL",
+          "description": "Подарочная карта Netflix номиналом 500 турецких TL",
           "price_stars": 1200,
           "currency": "XTR"
         },
@@ -380,8 +380,8 @@
           "product_type": "Gift Card",
           "country": "Турция",
           "country_code": "TR",
-          "denomination": "1000 лир",
-          "description": "Подарочная карта Netflix номиналом 1000 турецких лир",
+          "denomination": "1000 TL",
+          "description": "Подарочная карта Netflix номиналом 1000 турецких TL",
           "price_stars": 2400,
           "currency": "XTR"
         }

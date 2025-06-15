@@ -556,14 +556,6 @@
       </svg>`;
     }
 
-    // Функция для замены лир на TL и добавления пробелов между цифрой и валютой
-    function formatDenomination(denomination) {
-      return denomination
-        .replace(/лир/g, 'TL')
-        .replace(/лира/g, 'TL')
-        .replace(/(\d+)([A-Za-z]+)/g, '$1 $2'); // Добавляем пробел между цифрой и валютой
-    }
-
     // Загрузка и отображение товаров
     fetch('catalog.json')
       .then(response => response.json())
