@@ -317,6 +317,29 @@
       z-index: 2;
     }
 
+    /* Значок хита в углу логотипа */
+    .hit-overlay {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
+      z-index: 3;
+      animation: hitPulse 2s infinite;
+    }
+
+    @keyframes hitPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
 
 
     .buy-button {
@@ -923,6 +946,7 @@
             ${brandLogos[product.brand] || '<div style="width:44px;height:44px;background:#ddd;border-radius:6px;"></div>'}
             <div class="country-flag-overlay">${countryFlags[product.country_code] || '🌍'}</div>
             <div class="denomination-overlay">${shortDenomination}</div>
+            ${product.is_hit ? '<div class="hit-overlay">🔥</div>' : ''}
           </div>
           <button class="buy-button" onclick="buyProduct('${product.id}')">
             ${product.price_stars} ${starSVG()}

@@ -14,7 +14,8 @@
           "denomination": "12 мес",
           "description": "После покупки получите код моментально в Telegram\n\nПошаговая инструкция:\n\nШаг 1: Включите VPN на регион Индия\nРекомендуем сервис <a href='https://hideaway.name/ru/#67a4e1c41b892'>HideMyName</a>\n\nШаг 2: Зайдите в настройки аккаунта Spotify и смените страну на Индию\n\nШаг 3: Перейдите на официальный сайт Spotify в раздел \"Активировать код\" (Redeem)\n\nШаг 4: Введите полученный код активации\n\nШаг 5: Наслаждайтесь музыкой без ограничений\n\nПоддержка: <a href='https://t.me/podpiskaorg_bot'>@podpiskaorg_bot</a>",
           "price_stars": 1,
-          "currency": "XTR"
+          "currency": "XTR",
+          "is_hit": 1
         },
         {
           "id": "spotify_ind_1m",
@@ -120,7 +121,8 @@
           "denomination": "500 руб",
           "description": "После покупки получите код моментально в Telegram\n\nПошаговая инструкция:\n\nШаг 1: Откройте приложение iTunes Store или App Store\n\nШаг 2: Внизу страницы нажмите кнопку \"Активировать\" (Redeem)\n\nШаг 3: Введите полученный код активации\n\nШаг 4: Наслаждайтесь покупками в экосистеме Apple\n\nПоддержка: <a href=\"https://t.me/podpiskaorg_bot\">@podpiskaorg_bot</a>",
           "price_stars": 150,
-          "currency": "XTR"
+          "currency": "XTR",
+          "is_hit": 1
         },
         {
           "id": "apple_1000rub",
