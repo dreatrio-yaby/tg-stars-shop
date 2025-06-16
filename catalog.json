@@ -13,11 +13,11 @@
           "country_code": "IN",
           "denomination": "12 мес",
           "description": "После покупки получите код моментально в Telegram\n\nПошаговая инструкция:\n\nШаг 1: Включите VPN на регион Индия\nРекомендуем сервис <a href='https://hideaway.name/ru/#67a4e1c41b892'>HideMyName</a>\n\nШаг 2: Зайдите в настройки аккаунта Spotify и смените страну на Индию\n\nШаг 3: Перейдите на официальный сайт Spotify в раздел \"Активировать код\" (Redeem)\n\nШаг 4: Введите полученный код активации\n\nШаг 5: Наслаждайтесь музыкой без ограничений\n\nПоддержка: <a href='https://t.me/podpiskaorg_bot'>@podpiskaorg_bot</a>",
-          "price_stars": 180,
+          "price_stars": 1,
           "currency": "XTR"
         },
         {
-          "id": "spotify_indonesia_1m",
+          "id": "spotify_ind_1m",
           "brand": "Spotify",
           "product_type": "Premium",
           "country": "Индонезия",
@@ -28,7 +28,7 @@
           "currency": "XTR"
         },
         {
-          "id": "spotify_indonesia_3m",
+          "id": "spotify_ind_3m",
           "brand": "Spotify",
           "product_type": "Premium",
           "country": "Индонезия",
@@ -39,7 +39,7 @@
           "currency": "XTR"
         },
         {
-          "id": "spotify_indonesia_6m",
+          "id": "spotify_ind_6m",
           "brand": "Spotify",
           "product_type": "Premium",
           "country": "Индонезия",
@@ -57,7 +57,7 @@
       "description": "Подарочные карты Apple",
       "products": [
         {
-          "id": "apple_turkey_50tl",
+          "id": "apple_50",
           "brand": "Apple",
           "product_type": "Gift Card",
           "country": "Турция",
@@ -68,7 +68,7 @@
           "currency": "XTR"
         },
         {
-          "id": "apple_turkey_100tl",
+          "id": "apple_100",
           "brand": "Apple",
           "product_type": "Gift Card",
           "country": "Турция",
@@ -79,7 +79,7 @@
           "currency": "XTR"
         },
         {
-          "id": "apple_turkey_250tl",
+          "id": "apple_250",
           "brand": "Apple",
           "product_type": "Gift Card",
           "country": "Турция",
@@ -90,7 +90,7 @@
           "currency": "XTR"
         },
         {
-          "id": "apple_turkey_500tl",
+          "id": "apple_500",
           "brand": "Apple",
           "product_type": "Gift Card",
           "country": "Турция",
@@ -101,7 +101,7 @@
           "currency": "XTR"
         },
         {
-          "id": "apple_turkey_1000tl",
+          "id": "apple_1000",
           "brand": "Apple",
           "product_type": "Gift Card",
           "country": "Турция",
@@ -112,7 +112,7 @@
           "currency": "XTR"
         },
         {
-          "id": "apple_russia_500rub",
+          "id": "apple_500rub",
           "brand": "Apple",
           "product_type": "Gift Card",
           "country": "Россия",
@@ -123,7 +123,7 @@
           "currency": "XTR"
         },
         {
-          "id": "apple_russia_1000rub",
+          "id": "apple_1000rub",
           "brand": "Apple",
           "product_type": "Gift Card",
           "country": "Россия",
@@ -134,7 +134,7 @@
           "currency": "XTR"
         },
         {
-          "id": "apple_russia_2000rub",
+          "id": "apple_2000rub",
           "brand": "Apple",
           "product_type": "Gift Card",
           "country": "Россия",
@@ -145,7 +145,7 @@
           "currency": "XTR"
         },
         {
-          "id": "apple_russia_3000rub",
+          "id": "apple_3000rub",
           "brand": "Apple",
           "product_type": "Gift Card",
           "country": "Россия",
@@ -163,7 +163,7 @@
       "description": "PlayStation Store карты",
       "products": [
         {
-          "id": "playstation_usa_10usd",
+          "id": "ps_10usd",
           "brand": "PlayStation",
           "product_type": "Store Card",
           "country": "США",
@@ -174,7 +174,7 @@
           "currency": "XTR"
         },
         {
-          "id": "playstation_usa_25usd",
+          "id": "ps_25usd",
           "brand": "PlayStation",
           "product_type": "Store Card",
           "country": "США",
@@ -185,7 +185,7 @@
           "currency": "XTR"
         },
         {
-          "id": "playstation_usa_50usd",
+          "id": "ps_50usd",
           "brand": "PlayStation",
           "product_type": "Store Card",
           "country": "США",
@@ -196,7 +196,7 @@
           "currency": "XTR"
         },
         {
-          "id": "playstation_usa_100usd",
+          "id": "ps_100usd",
           "brand": "PlayStation",
           "product_type": "Store Card",
           "country": "США",
@@ -207,7 +207,7 @@
           "currency": "XTR"
         },
         {
-          "id": "playstation_poland_50pln",
+          "id": "ps_50pl",
           "brand": "PlayStation",
           "product_type": "Store Card",
           "country": "Польша",
@@ -218,7 +218,7 @@
           "currency": "XTR"
         },
         {
-          "id": "playstation_poland_100pln",
+          "id": "ps_100pl",
           "brand": "PlayStation",
           "product_type": "Store Card",
           "country": "Польша",
@@ -229,7 +229,7 @@
           "currency": "XTR"
         },
         {
-          "id": "playstation_poland_200pln",
+          "id": "ps_200pl",
           "brand": "PlayStation",
           "product_type": "Store Card",
           "country": "Польша",
@@ -240,7 +240,7 @@
           "currency": "XTR"
         },
         {
-          "id": "playstation_turkey_500tl",
+          "id": "ps_500tl",
           "brand": "PlayStation",
           "product_type": "Store Card",
           "country": "Турция",
@@ -251,7 +251,7 @@
           "currency": "XTR"
         },
         {
-          "id": "playstation_turkey_1000tl",
+          "id": "ps_1000tl",
           "brand": "PlayStation",
           "product_type": "Store Card",
           "country": "Турция",
@@ -262,7 +262,7 @@
           "currency": "XTR"
         },
         {
-          "id": "playstation_turkey_2000tl",
+          "id": "ps_2000tl",
           "brand": "PlayStation",
           "product_type": "Store Card",
           "country": "Турция",
@@ -280,7 +280,7 @@
       "description": "Robux для игры Roblox",
       "products": [
         {
-          "id": "roblox_russia_100robux",
+          "id": "roblox_100_new",
           "brand": "Roblox",
           "product_type": "Robux",
           "country": "Россия и СНГ",
@@ -291,7 +291,7 @@
           "currency": "XTR"
         },
         {
-          "id": "roblox_russia_200robux",
+          "id": "roblox_200_new",
           "brand": "Roblox",
           "product_type": "Robux",
           "country": "Россия и СНГ",
@@ -302,7 +302,7 @@
           "currency": "XTR"
         },
         {
-          "id": "roblox_russia_400robux",
+          "id": "roblox_400_new",
           "brand": "Roblox",
           "product_type": "Robux",
           "country": "Россия и СНГ",
@@ -313,7 +313,7 @@
           "currency": "XTR"
         },
         {
-          "id": "roblox_russia_800robux",
+          "id": "roblox_800_new",
           "brand": "Roblox",
           "product_type": "Robux",
           "country": "Россия и СНГ",
@@ -324,7 +324,7 @@
           "currency": "XTR"
         },
         {
-          "id": "roblox_russia_2000robux",
+          "id": "roblox_2000_new",
           "brand": "Roblox",
           "product_type": "Robux",
           "country": "Россия и СНГ",
@@ -335,7 +335,7 @@
           "currency": "XTR"
         },
         {
-          "id": "roblox_russia_4500robux",
+          "id": "roblox_4500_new",
           "brand": "Roblox",
           "product_type": "Robux",
           "country": "Россия и СНГ",
@@ -353,7 +353,7 @@
       "description": "Подарочные карты Netflix",
       "products": [
         {
-          "id": "netflix_turkey_250tl",
+          "id": "netflix_250tl",
           "brand": "Netflix",
           "product_type": "Gift Card",
           "country": "Турция",
@@ -364,7 +364,7 @@
           "currency": "XTR"
         },
         {
-          "id": "netflix_turkey_500tl",
+          "id": "netflix_500tl",
           "brand": "Netflix",
           "product_type": "Gift Card",
           "country": "Турция",
@@ -375,7 +375,7 @@
           "currency": "XTR"
         },
         {
-          "id": "netflix_turkey_1000tl",
+          "id": "netflix_1000tl",
           "brand": "Netflix",
           "product_type": "Gift Card",
           "country": "Турция",
@@ -393,7 +393,7 @@
       "description": "Nintendo eShop карты",
       "products": [
         {
-          "id": "nintendo_usa_10usd",
+          "id": "nintendo_10usd",
           "brand": "Nintendo",
           "product_type": "eShop Card",
           "country": "США",
@@ -404,7 +404,7 @@
           "currency": "XTR"
         },
         {
-          "id": "nintendo_usa_35usd",
+          "id": "nintendo_35usd",
           "brand": "Nintendo",
           "product_type": "eShop Card",
           "country": "США",
@@ -422,7 +422,7 @@
       "description": "Xbox подписки",
       "products": [
         {
-          "id": "xbox_india_ultimate_1m",
+          "id": "xbox_1m",
           "brand": "Xbox",
           "product_type": "Game Pass Ultimate",
           "country": "Индия",
@@ -433,7 +433,7 @@
           "currency": "XTR"
         },
         {
-          "id": "xbox_india_core_6m",
+          "id": "xbox_6m_core",
           "brand": "Xbox",
           "product_type": "Game Pass Core",
           "country": "Индия",
@@ -444,7 +444,7 @@
           "currency": "XTR"
         },
         {
-          "id": "xbox_india_core_12m",
+          "id": "xbox_12m_core",
           "brand": "Xbox",
           "product_type": "Game Pass Core",
           "country": "Индия",
