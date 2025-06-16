@@ -317,47 +317,7 @@
       z-index: 2;
     }
 
-    /* Стили для карточек хитов продаж */
-    .product-card.hit-product {
-      background: linear-gradient(135deg, #4c9eff 0%, #1c7ed6 100%);
-      border: 2px solid #339af0;
-      box-shadow: 0 4px 20px rgba(76, 158, 255, 0.25);
-      position: relative;
-      overflow: hidden;
-    }
 
-    .product-card.hit-product::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-      animation: hitShimmer 3s infinite;
-      pointer-events: none;
-    }
-
-    .product-card.hit-product .logo-container {
-      background: rgba(255, 255, 255, 0.15);
-      border: 2px solid rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(10px);
-    }
-
-    .product-card.hit-product .denomination-overlay {
-      background: linear-gradient(135deg, #495057 0%, #343a40 100%);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    .product-card.hit-product:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(76, 158, 255, 0.4);
-    }
-
-    @keyframes hitShimmer {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
 
 
 
@@ -952,7 +912,7 @@
       
       category.products.forEach(product => {
         const card = document.createElement('div');
-        card.className = `product-card${product.is_hit ? ' hit-product' : ''}`;
+        card.className = 'product-card';
         
         // Формируем сокращенный номинал для оверлея
         const shortDenomination = product.denomination
