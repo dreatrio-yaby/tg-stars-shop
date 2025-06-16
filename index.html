@@ -317,38 +317,46 @@
       z-index: 2;
     }
 
-    /* Значок хита в углу логотипа */
-    .hit-overlay {
-      position: absolute;
-      top: -6px;
-      right: -6px;
-      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4px 8px;
-      box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
-      z-index: 3;
-      animation: hitGlow 2s infinite;
-      font-size: 10px;
-      font-weight: 700;
-      color: white;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-      border: 2px solid white;
-      min-width: 32px;
-      letter-spacing: 0.5px;
+    /* Стили для карточек хитов продаж */
+    .product-card.hit-product {
+      background: linear-gradient(135deg, #4c9eff 0%, #1c7ed6 100%);
+      border: 2px solid #339af0;
+      box-shadow: 0 4px 20px rgba(76, 158, 255, 0.25);
+      position: relative;
+      overflow: hidden;
     }
 
-    @keyframes hitGlow {
-      0%, 100% { 
-        transform: scale(1);
-        box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
-      }
-      50% { 
-        transform: scale(1.05);
-        box-shadow: 0 4px 16px rgba(255, 107, 107, 0.6);
-      }
+    .product-card.hit-product::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      animation: hitShimmer 3s infinite;
+      pointer-events: none;
+    }
+
+    .product-card.hit-product .logo-container {
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .product-card.hit-product .denomination-overlay {
+      background: linear-gradient(135deg, #495057 0%, #343a40 100%);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .product-card.hit-product:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(76, 158, 255, 0.4);
+    }
+
+    @keyframes hitShimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
     }
 
 
@@ -944,7 +952,7 @@
       
       category.products.forEach(product => {
         const card = document.createElement('div');
-        card.className = 'product-card';
+        card.className = `product-card${product.is_hit ? ' hit-product' : ''}`;
         
         // Формируем сокращенный номинал для оверлея
         const shortDenomination = product.denomination
@@ -957,7 +965,6 @@
             ${brandLogos[product.brand] || '<div style="width:44px;height:44px;background:#ddd;border-radius:6px;"></div>'}
             <div class="country-flag-overlay">${countryFlags[product.country_code] || '🌍'}</div>
             <div class="denomination-overlay">${shortDenomination}</div>
-            ${product.is_hit ? '<div class="hit-overlay">HIT</div>' : ''}
           </div>
           <button class="buy-button" onclick="buyProduct('${product.id}')">
             ${product.price_stars} ${starSVG()}
