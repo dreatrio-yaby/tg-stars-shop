@@ -348,6 +348,115 @@
           "currency": "XTR"
         }
       ]
+    },
+    {
+      "id": "netflix",
+      "name": "Netflix",
+      "description": "Подарочные карты Netflix",
+      "products": [
+        {
+          "id": "netflix_250tl",
+          "brand": "Netflix",
+          "product_type": "Gift Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "250 TL",
+          "description": "После покупки код моментально придет в Telegram-бот\n\n<b>Пошаговая инструкция:</b>\n\nШаг 1: Включите VPN на регион Турция\nРекомендуем сервис <a href='https://hideaway.name/ru/#67a4e1c41b892'>HideMyName</a>\n\nШаг 2: Зарегистрируйте аккаунт Netflix с регионом Турция\n\nШаг 3: Перейдите на официальный сайт Netflix в раздел \"Активировать код\" (Redeem)\n\nШаг 4: Введите полученный код активации\n\nШаг 5: Наслаждайтесь просмотром\n\nПоддержка: <a href=\"https://t.me/podpiskaorg_bot\">@podpiskaorg_bot</a>",
+          "price_stars": 679,
+          "currency": "XTR"
+        },
+        {
+          "id": "netflix_500tl",
+          "brand": "Netflix",
+          "product_type": "Gift Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "500 TL",
+          "description": "После покупки код моментально придет в Telegram-бот\n\n<b>Пошаговая инструкция:</b>\n\nШаг 1: Включите VPN на регион Турция\nРекомендуем сервис <a href='https://hideaway.name/ru/#67a4e1c41b892'>HideMyName</a>\n\nШаг 2: Зарегистрируйте аккаунт Netflix с регионом Турция\n\nШаг 3: Перейдите на официальный сайт Netflix в раздел \"Активировать код\" (Redeem)\n\nШаг 4: Введите полученный код активации\n\nШаг 5: Наслаждайтесь просмотром\n\nПоддержка: <a href=\"https://t.me/podpiskaorg_bot\">@podpiskaorg_bot</a>",
+          "price_stars": 1299,
+          "currency": "XTR"
+        },
+        {
+          "id": "netflix_1000tl",
+          "brand": "Netflix",
+          "product_type": "Gift Card",
+          "country": "Турция",
+          "country_code": "TR",
+          "denomination": "1000 TL",
+          "description": "После покупки код моментально придет в Telegram-бот\n\n<b>Пошаговая инструкция:</b>\n\nШаг 1: Включите VPN на регион Турция\nРекомендуем сервис <a href='https://hideaway.name/ru/#67a4e1c41b892'>HideMyName</a>\n\nШаг 2: Зарегистрируйте аккаунт Netflix с регионом Турция\n\nШаг 3: Перейдите на официальный сайт Netflix в раздел \"Активировать код\" (Redeem)\n\nШаг 4: Введите полученный код активации\n\nШаг 5: Наслаждайтесь просмотром\n\nПоддержка: <a href=\"https://t.me/podpiskaorg_bot\">@podpiskaorg_bot</a>",
+          "price_stars": 2599,
+          "currency": "XTR"
+        }
+      ]
+    },
+    {
+      "id": "nintendo",
+      "name": "Nintendo",
+      "description": "Nintendo eShop карты",
+      "products": [
+        {
+          "id": "nintendo_10usd",
+          "brand": "Nintendo",
+          "product_type": "eShop Card",
+          "country": "США",
+          "country_code": "US",
+          "denomination": "10 USD",
+          "description": "После покупки код моментально придет в Telegram-бот\n\n<b>Пошаговая инструкция:</b>\n\nШаг 1: Перейдите в Nintendo eShop на консоли Nintendo Switch\n\nШаг 2: Выберите вкладку \"Ввести код\" (Enter Code)\n\nШаг 3: Введите полученный код активации\n\nШаг 4: Наслаждайтесь играми\n\nПоддержка: <a href=\"https://t.me/podpiskaorg_bot\">@podpiskaorg_bot</a>",
+          "price_stars": 280,
+          "currency": "XTR"
+        },
+        {
+          "id": "nintendo_35usd",
+          "brand": "Nintendo",
+          "product_type": "eShop Card",
+          "country": "США",
+          "country_code": "US",
+          "denomination": "35 USD",
+          "description": "После покупки код моментально придет в Telegram-бот\n\n<b>Пошаговая инструкция:</b>\n\nШаг 1: Перейдите в Nintendo eShop на консоли Nintendo Switch\n\nШаг 2: Выберите вкладку \"Ввести код\" (Enter Code)\n\nШаг 3: Введите полученный код активации\n\nШаг 4: Наслаждайтесь играми\n\nПоддержка: <a href=\"https://t.me/podpiskaorg_bot\">@podpiskaorg_bot</a>",
+          "price_stars": 980,
+          "currency": "XTR"
+        }
+      ]
+    },
+    {
+      "id": "xbox",
+      "name": "Xbox",
+      "description": "Xbox подписки",
+      "products": [
+        {
+          "id": "xbox_1m",
+          "brand": "Xbox",
+          "product_type": "Game Pass Ultimate",
+          "country": "Индия",
+          "country_code": "IN",
+          "denomination": "Ultimate 1 мес",
+          "description": "После покупки код моментально придет в Telegram-бот\n\nВажно: Код только для новых аккаунтов региона Индия!\n\n<b>Пошаговая инструкция:</b>\n\nШаг 1: Включите VPN на регион Индия\nРекомендуем сервис <a href='https://hideaway.name/ru/#67a4e1c41b892'>HideMyName</a>\n\nШаг 2: Зарегистрируйте новый аккаунт Xbox с регионом Индия\n\nШаг 3: Перейдите на официальный сайт Microsoft в раздел \"Активировать код\" (Redeem)\n\nШаг 4: Введите код и ОБЯЗАТЕЛЬНО снимите галочку автопродления\n\nШаг 5: Наслаждайтесь играми\n\nПоддержка: <a href=\"https://t.me/podpiskaorg_bot\">@podpiskaorg_bot</a>",
+          "price_stars": 180,
+          "currency": "XTR"
+        },
+        {
+          "id": "xbox_6m_core",
+          "brand": "Xbox",
+          "product_type": "Game Pass Core",
+          "country": "Индия",
+          "country_code": "IN",
+          "denomination": "Core 6 мес",
+          "description": "После покупки код моментально придет в Telegram-бот\n\nВажно: Код только для новых аккаунтов региона Индия!\n\n<b>Пошаговая инструкция:</b>\n\nШаг 1: Включите VPN на регион Индия\nРекомендуем сервис <a href='https://hideaway.name/ru/#67a4e1c41b892'>HideMyName</a>\n\nШаг 2: Зарегистрируйте новый аккаунт Xbox с регионом Индия\n\nШаг 3: Перейдите на официальный сайт Microsoft в раздел \"Активировать код\" (Redeem)\n\nШаг 4: Введите код и ОБЯЗАТЕЛЬНО снимите галочку автопродления\n\nШаг 5: Наслаждайтесь играми\n\nПоддержка: <a href=\"https://t.me/podpiskaorg_bot\">@podpiskaorg_bot</a>",
+          "price_stars": 450,
+          "currency": "XTR"
+        },
+        {
+          "id": "xbox_12m_core",
+          "brand": "Xbox",
+          "product_type": "Game Pass Core",
+          "country": "Индия",
+          "country_code": "IN",
+          "denomination": "Core 12 мес",
+          "description": "После покупки код моментально придет в Telegram-бот\n\nВажно: Код только для новых аккаунтов региона Индия!\n\n<b>Пошаговая инструкция:</b>\n\nШаг 1: Включите VPN на регион Индия\nРекомендуем сервис <a href='https://hideaway.name/ru/#67a4e1c41b892'>HideMyName</a>\n\nШаг 2: Зарегистрируйте новый аккаунт Xbox с регионом Индия\n\nШаг 3: Перейдите на официальный сайт Microsoft в раздел \"Активировать код\" (Redeem)\n\nШаг 4: Введите код и ОБЯЗАТЕЛЬНО снимите галочку автопродления\n\nШаг 5: Наслаждайтесь играми\n\nПоддержка: <a href=\"https://t.me/podpiskaorg_bot\">@podpiskaorg_bot</a>",
+          "price_stars": 900,
+          "currency": "XTR"
+        }
+      ]
     }
   ]
 }
