@@ -220,17 +220,7 @@
       pointer-events: none;
     }
 
-    .product-card::after {
-      content: '👆';
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      font-size: 16px;
-      opacity: 0;
-      transform: translateY(4px);
-      transition: all 0.3s ease;
-      pointer-events: none;
-    }
+
 
     .product-card:hover {
       transform: translateY(-6px);
@@ -242,10 +232,7 @@
       opacity: 1;
     }
 
-    .product-card:hover::after {
-      opacity: 0.6;
-      transform: translateY(0);
-    }
+
 
     .product-card:active {
       transform: translateY(-3px);
