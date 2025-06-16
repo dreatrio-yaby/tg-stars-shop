@@ -187,18 +187,7 @@
       gap: 1rem;
     }
 
-    /* Мобильные улучшения для продуктовой сетки */
-    @media (max-width: 480px) {
-      .products-grid {
-        gap: 0.75rem;
-      }
-      
-      .product-card {
-        padding: 1.25rem 0.75rem;
-        /* Увеличиваем минимальную высоту нажатия для лучшего UX */
-        min-height: 220px;
-      }
-    }
+
 
     /* Product Card */
     .product-card {
@@ -215,27 +204,6 @@
       padding: 1.5rem 1rem;
       box-shadow: 0 1px 3px var(--shadow);
       cursor: pointer;
-      user-select: none;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .product-card::after {
-      content: '👆';
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      font-size: 14px;
-      opacity: 0.6;
-      transition: all 0.3s ease;
-      z-index: 3;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 50%;
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
     .product-card::before {
@@ -262,21 +230,9 @@
       opacity: 1;
     }
 
-    .product-card:hover::after {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-
     .product-card:active {
       transform: translateY(-3px);
       box-shadow: 0 6px 20px var(--shadow-active);
-      background: rgba(36, 129, 204, 0.02);
-    }
-
-    .product-card:active::after {
-      content: '✨';
-      transform: scale(1.2);
-      opacity: 1;
     }
 
     .logo-container {
@@ -292,8 +248,6 @@
       position: relative;
       overflow: hidden;
       transition: all 0.3s ease;
-      /* Добавляем тень для глубины */
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     .logo-container::before {
@@ -706,79 +660,7 @@
       }
     }
 
-    /* Специальные стили для touch устройств */
-    @media (hover: none) and (pointer: coarse) {
-      .product-card {
-        /* Для мобильных делаем карточки более выразительными */
-        border: 2px solid var(--border);
-        box-shadow: 0 2px 8px rgba(36, 129, 204, 0.1);
-        /* Добавляем градиентную границу для лучшей видимости */
-        background: linear-gradient(white, white) content-box,
-                   linear-gradient(135deg, rgba(36, 129, 204, 0.1), rgba(100, 181, 246, 0.1)) border-box;
-      }
-      
-      .product-card::after {
-        opacity: 0.8;
-        font-size: 16px;
-        width: 28px;
-        height: 28px;
-        /* Добавляем мерцающую анимацию для привлечения внимания */
-        animation: shimmer 3s ease-in-out infinite;
-      }
-      
-      .product-card:active {
-        transform: scale(0.98);
-        border-color: var(--primary);
-        background: rgba(36, 129, 204, 0.05);
-        /* Добавляем эффект свечения при нажатии */
-        box-shadow: 0 0 20px rgba(36, 129, 204, 0.3);
-      }
-    }
 
-    /* Анимация мерцания для иконки нажатия */
-    @keyframes shimmer {
-      0%, 100% { 
-        opacity: 0.6; 
-        filter: brightness(1);
-      }
-      50% { 
-        opacity: 1; 
-        filter: brightness(1.2);
-      }
-    }
-
-    /* Добавляем подсказку внизу карточки */
-    .product-card-hint {
-      position: absolute;
-      bottom: 4px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 10px;
-      color: var(--text-hint);
-      opacity: 0.7;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      pointer-events: none;
-    }
-
-    /* Анимация пульсации для привлечения внимания */
-    @keyframes pulse-hint {
-      0% { opacity: 0.7; transform: translateX(-50%) scale(1); }
-      50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
-      100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
-    }
-
-    .product-card-hint {
-      animation: pulse-hint 2s ease-in-out infinite;
-    }
-
-    /* Останавливаем анимацию при взаимодействии */
-    .product-card:hover .product-card-hint,
-    .product-card:active .product-card-hint {
-      animation: none;
-      opacity: 1;
-    }
   </style>
 </head>
 <body>
@@ -1037,31 +919,14 @@
           <button class="buy-button" onclick="buyProduct('${product.id}')">
             ${product.price_stars} ${starSVG()}
           </button>
-          <div class="product-card-hint">Нажмите для подробностей</div>
         `;
         
         // Добавляем обработчик клика на карточку (исключая кнопку)
         card.addEventListener('click', (e) => {
           // Проверяем, что клик не был по кнопке покупки
           if (!e.target.closest('.buy-button')) {
-            // Добавляем тактильную обратную связь (вибрацию) на мобильных
-            if (navigator.vibrate) {
-              navigator.vibrate(50);
-            }
-            
             openProductModal(product);
           }
-        });
-
-        // Добавляем обработчики для улучшенной визуальной обратной связи
-        card.addEventListener('touchstart', () => {
-          card.style.transform = 'scale(0.98)';
-          card.style.transition = 'transform 0.1s ease';
-        });
-
-        card.addEventListener('touchend', () => {
-          card.style.transform = '';
-          card.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
         });
         
         productsGrid.appendChild(card);
