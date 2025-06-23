@@ -216,8 +216,17 @@
       padding: 1.5rem 1rem;
       box-shadow: 0 1px 3px var(--shadow);
       cursor: pointer;
-      outline: none;
-      -webkit-tap-highlight-color: transparent;
+      outline: none !important;
+      -webkit-tap-highlight-color: transparent !important;
+    }
+
+    .product-card:focus {
+      outline: none !important;
+      box-shadow: 0 1px 3px var(--shadow);
+    }
+
+    .product-card:focus-visible {
+      outline: none !important;
     }
 
     .product-card::before {
